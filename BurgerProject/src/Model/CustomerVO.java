@@ -4,11 +4,13 @@ public class CustomerVO {
 
 	private String customer;
 	private String dialogue;
+
 	
-	public CustomerVO(String customer, String dialogue) {
+	public CustomerVO(String customer, String dialogue, String recepie) {
 		super();
 		this.customer = customer;
 		this.dialogue = dialogue;
+
 		
 		
 	}
@@ -28,4 +30,5 @@ public class CustomerVO {
 	public void setDialogue(String dialogue) {
 		this.dialogue = dialogue;
 	}
+	
 }
