@@ -37,9 +37,12 @@ public class DAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 
-			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
-			String id = "campus_h_0830_6";
-			String pw = "smhrd6";
+			String url = "jdbc:oracle:thin:@localhost:1521:xe";
+			String id = "hr";
+			String pw = "hr";
+//			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
+//			String id = "campus_h_0830_6";
+//			String pw = "smhrd6";
 
 			conn = DriverManager.getConnection(url, id, pw);
 
