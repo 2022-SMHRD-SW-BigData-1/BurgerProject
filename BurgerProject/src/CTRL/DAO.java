@@ -86,10 +86,10 @@ public class DAO {
 
 		try {
 			getCon();
-			String sql = "select pw from memberInfo where id = ?";
+			String sql = "select password from memberInfo where id = ?";
 
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, id);
+			psmt = conn.prepareStatement(sql); // conn을 통해서 준비된sql문와 DB를 연결
+			psmt.setString(1, id); // sql문의 String ?에 id 대입
 
 			rs = psmt.executeQuery();
 
@@ -129,4 +129,5 @@ public class DAO {
 		}
 		return cnt;
 	}
+	
 }
