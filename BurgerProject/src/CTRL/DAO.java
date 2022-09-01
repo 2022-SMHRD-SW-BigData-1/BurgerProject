@@ -59,17 +59,16 @@ public class DAO {
 	}
 
 	// [1]회원가입
-	public int join(String id, String pw, String nick, int age) {
+	public int join(String id, String pw, String nick, int score) {
 		int cnt = 0;
 		try {
 			getCon();
-			String sql = "insert into memberInfo values(?,?,?,?)";
+			String sql = "insert into memberInfo values(?,?,?,10000)";
 
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
 			psmt.setString(2, pw);
 			psmt.setString(3, nick);
-			psmt.setInt(4, age);
 
 			cnt = psmt.executeUpdate();
 		} catch (SQLException e) {
@@ -110,36 +109,6 @@ public class DAO {
 		}
 		return -2;
 
-	}
-
-	// [3]조회
-	public ArrayList<MemberVO> select() {
-		ArrayList<MemberVO> list = new ArrayList<MemberVO>();
-		try {
-			getCon();
-			String sql = "select * from memberInfo";
-			psmt = conn.prepareStatement(sql);
-			rs = psmt.executeQuery();
-
-			while (rs.next()) {
-				String id = rs.getString(1);
-				String pw = rs.getString(2);
-				String nick = rs.getString(3);
-				int age = rs.getInt(4);
-				MemberVO vo = new MemberVO(id, pw, nick, age);
-				list.add(vo);
-			}
-			for (int i = 0; i < list.size(); i++) {
-				System.out.println(list.get(i).getId() + " / " + list.get(i).getPw() + " / " + list.get(i).getNick()
-						+ " / " + list.get(i).getAge());
-			}
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close();
-		}
-		return list;
 	}
 
 	// [4]탈퇴
