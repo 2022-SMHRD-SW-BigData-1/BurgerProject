@@ -22,19 +22,23 @@ public class ingredientCTRLMethod {
 			System.out.print("<선택> : ");
 			int num2 = sc.nextInt();
 
-			switch(num2) {
-			case 1 : 
+			switch (num2) {
+			case 1:
 				System.out.println("고기패티를 구매하였습니다.");
-			case 2 : 
+				break;
+			case 2:
 				System.out.println("새우패티를 구매하였습니다.");
-			case 3 : 
+				break;
+			case 3:
 				System.out.println("치킨패티를 구매하였습니다.");
-			case 4 : 
+				break;
+			case 4:
 				System.out.println("베이컨를 구매하였습니다.");
-			case 5 : 
+				break;
+			case 5:
 				System.out.println("이전으로 돌아가겠습니다.");
+				break;
 			}
-
 		}
 
 		if (num1 == 2) {
@@ -61,5 +65,4 @@ public class ingredientCTRLMethod {
 			}
 		}
 	}
-
 }
