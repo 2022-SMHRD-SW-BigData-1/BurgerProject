@@ -1,17 +1,19 @@
 package View;
 
 import java.util.Scanner;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import CTRL.DAO;
-import Model.MemberVO;
 
 public class BurgerStore {
 	static DAO dao = new DAO();
 	static Scanner sc = new Scanner(System.in);
-	
+	static int count = 1;
 	public static void main(String[] args) {
 		User();
 		start();
+		selectLevel();
 
 	}
 	// User 회원가입, 로그인, 탈퇴, 종료 등 시작 메소드
@@ -79,11 +81,29 @@ public class BurgerStore {
 	}
 	
 	public static void selectLevel() {
+		Timer timer = new Timer();
+		
 		System.out.print("난이도를 선택하세요! >> ");
 		System.out.println("[1]Easy  [2]Normal  [3]Hard");
 		int num = sc.nextInt();
 		if (num == 1) {
+			
 			System.out.println("Easy 난이도를 선택하셨습니다. 3초 후 게임을 시작하겠습니다.");
+			TimerTask task = new TimerTask() {
+				@Override
+				public void run() {
+				if(count <= 3) {
+					System.out.println("[카운트다운 : " + count);
+					count++;
+				} else {
+					System.out.println("시작!");
+					timer.cancel();
+				}
+						
+				}
+				
+			};
+			timer.schedule(task, 1000, 1000);
 		}
 	}
 
