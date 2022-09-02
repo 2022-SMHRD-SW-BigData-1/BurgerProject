@@ -25,8 +25,8 @@ public class ingredientCTRLMethod {
 	int Cntmustard = 0;
 	int Cntketchup = 0;
 	int Cntcheese = 0;
-	
-	int score=10000;
+
+	int score = 10000;
 
 	// [1] 재료구매
 
@@ -47,24 +47,24 @@ public class ingredientCTRLMethod {
 					System.out.println("고기패티를 구매하였습니다.");
 					System.out.println();
 					Cntmeatpatty++;
-					score-=50;
+					score -= 50;
 					break;
 				case 2:
 					System.out.println("새우패티를 구매하였습니다.");
 					System.out.println();
 					Cntshrimppatty++;
-					score-=50;
+					score -= 50;
 					break;
 				case 3:
 					System.out.println("치킨패티를 구매하였습니다.");
 					System.out.println();
 					Cntchickenpatty++;
-					score-=50;
+					score -= 50;
 					break;
 				case 4:
 					System.out.println("베이컨를 구매하였습니다.");
 					System.out.println();
-					score-=50;
+					score -= 50;
 					Cntbacon++;
 					break;
 				case 5:
@@ -84,19 +84,19 @@ public class ingredientCTRLMethod {
 				case 1:
 					System.out.println("토마토를 구매하였습니다.");
 					System.out.println();
-					score-=50;
+					score -= 50;
 					Cnttomato++;
 					break;
 				case 2:
 					System.out.println("피클을 구매하였습니다.");
 					System.out.println();
-					score-=50;
+					score -= 50;
 					Cntpickle++;
 					break;
 				case 3:
 					System.out.println("양상추를 구매하였습니다.");
 					System.out.println();
-					score-=50;
+					score -= 50;
 					Cntcabbage++;
 					break;
 				case 4:
@@ -115,25 +115,25 @@ public class ingredientCTRLMethod {
 				case 1:
 					System.out.println("빵을 구매하였습니다.");
 					System.out.println();
-					score-=50;
+					score -= 50;
 					Cntbread++;
 					break;
 				case 2:
 					System.out.println("머스타드을 구매하였습니다.");
 					System.out.println();
-					score-=50;
+					score -= 50;
 					Cntmustard++;
 					break;
 				case 3:
 					System.out.println("케찹을 구매하였습니다.");
 					System.out.println();
-					score-=50;
+					score -= 50;
 					Cntketchup++;
 					break;
 				case 4:
 					System.out.println("치즈를 구매하였습니다.");
 					System.out.println();
-					score-=50;
+					score -= 50;
 					Cntcheese++;
 					break;
 				case 5:
@@ -154,7 +154,7 @@ public class ingredientCTRLMethod {
 	}
 
 	// [2]주방 및 제작
-	
+
 	int i = 0;
 	String[] arr = new String[3]; // 배열의 크기는 나중에 손님이 들고온 레시피로 배열의 크기 조정
 
@@ -356,6 +356,25 @@ public class ingredientCTRLMethod {
 	}
 
 	// [3]햄버거 판매
+
+	public void SellHamburger() {
+
+//		for (int i = 0; i < arr.length; i++) {
+//			for (int j = 0; j < arr.length; j++) {
+//				if (arr[i] == arr1[j]) {
+//					System.out.println("햄버거 판매에 성공하였습니다.");
+//					Score += 1000;
+//					System.out.println("현재까지의 점수는 " + Score + "점 입니다.");
+//				} else if (arr[i] != arr1[j]) {
+//					System.out.println("햄버거 판매에 실패하였습니다.");
+//					Score -= 1000;
+//					System.out.println("현재까지의 점수는 " + Score + "점 입니다.");
+//
+//				}
+//			}
+//		}
+//
+	}
 
 	// [4] 재료 재고파악
 
