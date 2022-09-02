@@ -1,9 +1,14 @@
 package View;
 
+import java.awt.FlowLayout;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
 import CTRL.DAO;
 import CTRL.ingredientCTRL;
 
@@ -192,7 +197,7 @@ public class BurgerStore {
 	}
 
 	public static void play() {
-		
+
 		long start = System.currentTimeMillis();
 		long time = 3 * 60 * 1000;
 		escapeN(50);
@@ -279,13 +284,13 @@ public class BurgerStore {
 	public static void BuyIngredient() {
 		while (true) {
 			ingredientCTRL igCTRL = new ingredientCTRL();
-			
+
 			System.out.println("\t\t\t[1]육류 [2]채소류 [3]기타류 [4]처음화면으로 이동");
 			System.out.print("\t\t\t<선택> : ");
 			int num1 = sc.nextInt();
 
 			if (num1 == 1) {
-				
+
 				System.out.println("\t\t\t[1]고기패티 [2]새우패티 [3]치킨패티 [4]베이컨 [5]이전");
 				System.out.print("\t\t\t<선택> : ");
 				int num2 = sc.nextInt();
@@ -325,7 +330,7 @@ public class BurgerStore {
 			}
 
 			if (num1 == 2) {
-				
+
 				System.out.println("\t\t\t[1]토마토 [2]피클 [3]양상추 [4]이전");
 				System.out.print("\t\t\t<선택> : ");
 				int num3 = sc.nextInt();
@@ -358,7 +363,7 @@ public class BurgerStore {
 			}
 
 			if (num1 == 3) {
-				
+
 				System.out.println("\t\t\t[1]빵 [2]머스타드 [3]케찹 [4]치즈 [5]이전");
 				System.out.print("\t\t\t<선택> : ");
 				int num4 = sc.nextInt();
@@ -413,9 +418,43 @@ public class BurgerStore {
 	public static void CheckIngredient() {
 		System.out.println("\t\t\t<육류> --[1]고기패티 : " + Cntmeatpatty + "개, [2]새우패티 : " + Cntshrimppatty + "개, [3]치킨패티 : "
 				+ Cntchickenpatty + "개, [4]베이컨 : " + Cntbacon + "개");
-		System.out.println("\t\t\t<야채류>--[1]토마토 : " + Cnttomato + "개, [2]피클 : " + Cntpickle + "개, [3]양상추 : " + Cntcabbage + "개");
+		System.out.println(
+				"\t\t\t<야채류>--[1]토마토 : " + Cnttomato + "개, [2]피클 : " + Cntpickle + "개, [3]양상추 : " + Cntcabbage + "개");
 		System.out.println("\t\t\t<기타류>--[1]빵 : " + Cntbread + "개, [2]머스타드 : " + Cntmustard + "개, [3]케찹 : " + Cntketchup
 				+ "개, [4]치즈 : " + Cntcheese + "개");
+	}
+
+	public static void coungGui() {
+		JFrame jframe = new JFrame();
+		JLabel jLabel = new JLabel();
+		jframe.setLayout(new FlowLayout());
+		jframe.setBounds(170, 0, 170, 100);
+
+		jframe.add(jLabel);
+		jframe.setVisible(true);
+
+		Timer timer = new Timer();
+
+		timer.scheduleAtFixedRate(new TimerTask() {
+			int i = 3;
+
+			public void run() {
+				jLabel.setText(/*객체스트링*/ " : " + i);
+				i--;
+
+				if (i < 0) {
+					timer.cancel();
+					jLabel.setText("이집 별로네...");
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+
+						e.printStackTrace();
+					}
+					jframe.setVisible(false);
+				}
+			}
+		}, 0, 1000);
 	}
 
 }
