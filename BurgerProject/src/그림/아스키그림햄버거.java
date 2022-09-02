@@ -1,3 +1,4 @@
+package 그림;
 
 public class 아스키그림햄버거 {
 
@@ -12,6 +13,7 @@ public class 아스키그림햄버거 {
 		cheese();
 		complete();
 		making();
+		System.out.println("요정도!");
 	}
 	
 	// 1. 빵 그림
