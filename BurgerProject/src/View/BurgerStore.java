@@ -209,7 +209,7 @@ public class BurgerStore {
 			if (choice == 1) {
 				BuyIngredient();
 			} else if (choice == 2) {
-
+				MakeHamburger();
 			} else if (choice == 3) {
 
 			} else if (choice == 4) {
@@ -415,10 +415,10 @@ public class BurgerStore {
 
 	// [2] 햄버거 제작
 
-	int i1 = 0;
-	String[] arr = new String[3]; // 배열의 크기는 나중에 손님이 들고온 레시피로 배열의 크기 조정
+	static int i1 = 0;
+	static String[] arr = new String[3]; // 배열의 크기는 나중에 손님이 들고온 레시피로 배열의 크기 조정
 
-	public void MakeHamburger() {
+	public static void MakeHamburger() {
 
 		while (true) {
 
