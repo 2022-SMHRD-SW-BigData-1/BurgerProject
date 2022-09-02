@@ -358,6 +358,8 @@ public class BurgerStore {
 		}
 
 	}
+	
+	// [2] 햄버거 제작
 
 	// [4] 재료 재고파악
 
