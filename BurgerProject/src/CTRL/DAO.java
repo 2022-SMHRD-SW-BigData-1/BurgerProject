@@ -37,12 +37,12 @@ public class DAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 
-			String url = "jdbc:oracle:thin:@localhost:1521:xe";
-			String id = "hr";
-			String pw = "hr";
-//			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
-//			String id = "campus_h_0830_6";
-//			String pw = "smhrd6";
+//			String url = "jdbc:oracle:thin:@localhost:1521:xe";
+//			String id = "hr";
+//			String pw = "hr";
+			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
+			String id = "campus_h_0830_6";
+			String pw = "smhrd6";
 
 			conn = DriverManager.getConnection(url, id, pw);
 
@@ -62,11 +62,11 @@ public class DAO {
 	}
 
 	// [1]회원가입
-	public int join(String id, String pw, String nick, int score) {
+	public int join(String id, String pw, String nick) {
 		int cnt = 0;
 		try {
 			getCon();
-			String sql = "insert into memberInfo values(?,?,?,10000)";
+			String sql = "insert into memberInfo values(?,?,?)";
 
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);

@@ -35,10 +35,10 @@ public class BurgerStore {
 				String id = sc.next();
 				System.out.print("\t\t\t\tPW : ");
 				String pw = sc.next();
-				System.out.print("\t\t\t\t닉네임 : ");
+				System.out.print("\t\t\t\t닉네임(띄어쓰기 금지) : ");
 				String nick = sc.next();
 
-				int cnt = dao.join(id, pw, nick, 10000);
+				int cnt = dao.join(id, pw, nick);
 				if (cnt > 0) {
 					System.out.println("\t\t\t\t회원등록 성공!");
 				} else {
@@ -102,18 +102,18 @@ public class BurgerStore {
 		int nu = sc.nextInt();
 		switch (nu) {
 		case 1: {
-			System.out.println("\t\t\t\tEasy 난이도를 선택하셨습니다. 3초 후 게임을 시작하겠습니다.");
-			startCountdown(3);
+			System.out.println("\t\t\t\tEasy 난이도를 선택하셨습니다. 곧 게임을 시작하겠습니다.");
+			
 			break;
 		}
 		case 2: {
-			System.out.println("\t\t\t\tNormal 난이도를 선택하셨습니다. 3초 후 게임을 시작하겠습니다.");
-			startCountdown(3);
+			System.out.println("\t\t\t\tNormal 난이도를 선택하셨습니다. 곧 게임을 시작하겠습니다.");
+			
 			break;
 		}
 		case 3: {
-			System.out.println("\t\t\t\tHard 난이도를 선택하셨습니다. 3초 후 게임을 시작하겠습니다.");
-			startCountdown(3);
+			System.out.println("\t\t\t\tHard 난이도를 선택하셨습니다. 곧 게임을 시작하겠습니다.");
+			
 			break;
 		}
 		default:

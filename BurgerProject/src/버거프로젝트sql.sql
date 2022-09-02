@@ -9,3 +9,5 @@ drop table memberInfo;
 create table Ranking(
 nickname varchar2(30) not null,
 score number(20) not null);
+
+select * from memberInfo
