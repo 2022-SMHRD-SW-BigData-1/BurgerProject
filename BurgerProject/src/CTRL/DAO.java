@@ -114,7 +114,7 @@ public class DAO {
 
 	}
 
-	// [4]탈퇴
+	// [3]탈퇴
 	public int delete(String id) {
 		int cnt = 0;
 		try {

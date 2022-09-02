@@ -5,14 +5,13 @@ public class MemberVO {
 	private String id;
 	private String pw;
 	private String nick;
-	private int age;
 
 	// 생성자
-	public MemberVO(String id, String pw, String nick, int age) {
+	public MemberVO(String id, String pw, String nick) {
 		this.id = id;
 		this.pw = pw;
 		this.nick = nick;
-		this.age = age;
+		
 	}
 	// VO는 매개변수 자체를 나타내기 위해서 만든거다
 
@@ -39,14 +38,5 @@ public class MemberVO {
 	public void setNick(String nick) {
 		this.nick = nick;
 	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
-	}
-
 
 }
