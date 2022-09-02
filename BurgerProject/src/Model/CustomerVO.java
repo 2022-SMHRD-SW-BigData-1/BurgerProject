@@ -3,25 +3,20 @@ package Model;
 public class CustomerVO {
 
 	private String customer;
-	private String dialogue;
-
 	
-	public CustomerVO(String customer, String dialogue) {
+
+	public CustomerVO(String customer) {
 		super();
 		this.customer = customer;
-		this.dialogue = dialogue;
+	
+	}
 
-		
-		
+	public CustomerVO() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getCustomer() {
 		return customer;
-	
-	}
-
-	public String getDialogue() {
-		return dialogue;
 	}
 
 	
