@@ -21,15 +21,15 @@ public class ingredientCTRL {
 			case 1:
 				Method.BuyIngredient();
 				break;
-//			case 2:
-//				manager.deposit();
-//				break;
+			case 2:
+				Method.MakeHamburger();
+				break;
 //			case 3:
 //				manager.withdraw();
 //				break;
-//			case 4:
-//				manager.inquire();
-//				break;
+			case 4:
+				Method.BuyIngredient();
+				break;
 //			case 5:
 //				manager.disp();
 //				break;
