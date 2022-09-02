@@ -7,7 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
-import Model.MemberVO;
+
+import Model.RankingVO;
 
 public class DAO {
 	Scanner sc = new Scanner(System.in);
@@ -132,5 +133,60 @@ public class DAO {
 		}
 		return cnt;
 	}
-	
+
+	public int ranking(String id, int score) {
+		int cnt = 0;
+		String a = null;
+		try {
+			getCon();
+			String sql = "select nickname from memberInfo where id = ?";
+
+			psmt = conn.prepareStatement(sql); // conn을 통해서 준비된sql문와 DB를 연결
+			psmt.setString(1, id); // sql문의 String ?에 id 대입
+
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+				a = rs.getString(1);
+			}
+
+			String sql2 = "insert into ranking values(?,?)";
+			psmt = conn.prepareStatement(sql2);
+			psmt.setString(1, a);
+			psmt.setInt(2, score);
+
+			cnt = psmt.executeUpdate();
+			System.out.print("\t\t\t닉네임 : " + a + " / ");
+		} catch (SQLException e) {
+
+		} finally {
+			close();
+		}
+		return cnt;
+	}
+
+	public ArrayList<RankingVO> rankView() {
+		ArrayList<RankingVO> list = new ArrayList<RankingVO>();
+		try {
+			getCon();
+			String sql = "select * from ranking where rownum < 11 order by score";
+
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+				
+				String nick = rs.getString(1);
+				int score = rs.getInt(2);
+				RankingVO vo = new RankingVO(nick, score);
+				list.add(vo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return list;
+	}
+
 }

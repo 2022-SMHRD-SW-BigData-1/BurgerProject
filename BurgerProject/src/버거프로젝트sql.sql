@@ -10,4 +10,12 @@ create table Ranking(
 nickname varchar2(30) not null,
 score number(20) not null);
 
-select * from memberInfo
+select nickname from memberInfo where id = 'chp'
+
+select * from RANKING
+
+delete MEMBERINFO
+delete RANKING
+
+
+select * from ranking where rownum < 101 order by score

@@ -6,8 +6,7 @@ import Model.CustomerVO;
 import Model.DialogueVO;
 
 public class customerCTRL {
-	CustomerVO cs = new CustomerVO();
-	DialogueVO dia = new DialogueVO();
+	
 	ArrayList<DialogueVO> di = new ArrayList<DialogueVO>();
 	ArrayList<CustomerVO> cus = new ArrayList<CustomerVO>();
 

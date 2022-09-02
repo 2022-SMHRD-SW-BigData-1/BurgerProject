@@ -1,50 +1,37 @@
 package CTRL;
-import java.util.Scanner;
 
+import java.util.ArrayList;
 
+import Model.IngredientVO;
 
 public class ingredientCTRL {
+	ArrayList<IngredientVO> ic = new ArrayList<IngredientVO>();
 
-	public static void main(String[] args) {
-		
+	public ingredientCTRL() {
+
+		ic.add(new IngredientVO("고기패티"));
+		ic.add(new IngredientVO("새우패티"));
+		ic.add(new IngredientVO("치킨패티"));
+		ic.add(new IngredientVO("베이컨"));
+		ic.add(new IngredientVO("토마토"));
+		ic.add(new IngredientVO("피클"));
+		ic.add(new IngredientVO("양상추"));
+		ic.add(new IngredientVO("빵"));
+		ic.add(new IngredientVO("머스타드"));
+		ic.add(new IngredientVO("케찹"));
+		ic.add(new IngredientVO("치즈"));
+
 		// Controller
 		
-		Scanner sc = new Scanner(System.in);
-		ingredientCTRLMethod Method = new ingredientCTRLMethod();
-		
-		while (true) {
-			PrintMenu();
-			System.out.print("<선택> : ");
-			int choice = sc.nextInt();
-
-			switch (choice) {
-			case 1:
-				Method.BuyIngredient();
-				break;
-			case 2:
-				Method.MakeHamburger();
-				break;
-//			case 3:
-//				manager.withdraw();
-//				break;
-			case 4:
-				Method.BuyIngredient();
-				break;
-//			case 5:
-//				manager.disp();
-//				break;
-			default:
-				System.out.println("잘못입력하셨습니다. 재입력해주세요.");
-				break;
-			}
-		}
 
 	}
-	
-	public static void  PrintMenu() {
-		System.out.println();
-		System.out.println("======================= Menu ========================");
-		System.out.println("[1]재료구매 [2]주방 및 제작 [3]햄버거 판매 [4]재료 재고파악 [5]포기");
+
+	public String randomIngredient() {
+		double random = Math.random();
+		int i = (int) Math.round(random * (ic.size() - 1));
+
+		return ic.get(i).getAny();
+
 	}
 
 }

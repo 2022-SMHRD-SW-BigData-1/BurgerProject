@@ -12,6 +12,11 @@ public class IngredientVO {
 	private String mustard;
 	private String ketchup;
 	private String cheese;
+	private String any;
+	
+	public IngredientVO(String any) {
+		this.any = any;
+	}
 	public IngredientVO(String meatpatty, String shrimppatty, String chickenpatty, String bacon, String tomato,
 			String pickle, String cabbage, String bread, String mustard, String ketchup, String cheese) {
 		super();
@@ -26,6 +31,9 @@ public class IngredientVO {
 		this.mustard = mustard;
 		this.ketchup = ketchup;
 		this.cheese = cheese;
+	}
+	public String getAny() {
+		return any;
 	}
 	public String getMeatpatty() {
 		return meatpatty;
