@@ -103,17 +103,17 @@ public class BurgerStore {
 		switch (nu) {
 		case 1: {
 			System.out.println("\t\t\t\tEasy 난이도를 선택하셨습니다. 곧 게임을 시작하겠습니다.");
-			
+
 			break;
 		}
 		case 2: {
 			System.out.println("\t\t\t\tNormal 난이도를 선택하셨습니다. 곧 게임을 시작하겠습니다.");
-			
+
 			break;
 		}
 		case 3: {
 			System.out.println("\t\t\t\tHard 난이도를 선택하셨습니다. 곧 게임을 시작하겠습니다.");
-			
+
 			break;
 		}
 		default:
@@ -129,7 +129,7 @@ public class BurgerStore {
 			@Override
 			public void run() {
 				if (i <= count) {
-					System.out.println("\t\t\t\t[SYSTEM] 카운트다운 : " + (count+1-i));
+					System.out.println("\t\t\t\t[SYSTEM] 카운트다운 : " + (count + 1 - i));
 					i++;
 				} else {
 					System.out.println("\t\t\t\t[SYSTEM] 시작!");
@@ -191,9 +191,9 @@ public class BurgerStore {
 	}
 
 	public static void play() {
-		
+
 		long start = System.currentTimeMillis();
-		long time = 3*60*10;
+		long time = 3 * 60 * 10;
 		while ((System.currentTimeMillis() - start) < time) {
 			PrintMenu(); // [1]재료구매 [2]주방 및 제작 [3]햄버거 판매 [4]재료 재고파악 [5]포기
 			System.out.print("\t\t\t<선택> : ");
@@ -201,7 +201,7 @@ public class BurgerStore {
 
 			switch (choice) {
 			case 1:
-				BuyIngredient(); //[1]육류 [2]채소류 [3]기타류 [4]이전
+				BuyIngredient(); // [1]육류 [2]채소류 [3]기타류 [4]이전
 				break;
 //		case 2:
 //			manager.deposit();
@@ -232,21 +232,21 @@ public class BurgerStore {
 	public static void loading() {
 		try {
 			System.out.print("\t\t\t로딩중");
-			for (int i =0; i < 3; i++) {
+			for (int i = 0; i < 3; i++) {
 				Thread.sleep(500);
 				System.out.print("-----");
 			}
-			for (int i =0; i < 2; i++) {
+			for (int i = 0; i < 2; i++) {
 				Thread.sleep(700);
 				System.out.print("-----");
 			}
 			System.out.print("아직도 로딩중");
-			for (int i =0; i < 5; i++) {
+			for (int i = 0; i < 5; i++) {
 				Thread.sleep(200);
 				System.out.print("-----");
 			}
 			System.out.println("끝!!!");
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -261,23 +261,23 @@ public class BurgerStore {
 			System.out.print("\t\t\t<선택> : ");
 			int num2 = sc.nextInt();
 
-			switch (num2) {
-			case 1:
-				System.out.println("\t\t\t고기패티를 구매하였습니다.");
-				break;
-			case 2:
-				System.out.println("\t\t\t새우패티를 구매하였습니다.");
-				break;
-			case 3:
-				System.out.println("\t\t\t치킨패티를 구매하였습니다.");
-				break;
-			case 4:
-				System.out.println("\t\t\t베이컨를 구매하였습니다.");
-				break;
-			case 5:
+			if (num2 == 1) {
+				System.out.println("\t\t\t고기패티를 1개 구매하였습니다.");
+				// 클래스 메소드
+			} else if (num2 == 2) {
+				System.out.println("\t\t\t새우패티를 1개 구매하였습니다.");
+				// 클래스 메소드
+			} else if (num2 == 3) {
+				System.out.println("\t\t\t치킨패티를 1개 구매하였습니다.");
+				// 클래스 메소드
+			} else if (num2 == 4) {
+				System.out.println("\t\t\t베이컨를 1개 구매하였습니다.");
+				// 클래스 메소드
+			} else if (num2 == 5) {
 				System.out.println("\t\t\t이전으로 돌아가겠습니다.");
-				break;
+				// 클래스 메소드
 			}
+
 		}
 
 		if (num1 == 2) {
