@@ -6,7 +6,7 @@ public class CustomerVO {
 	private String dialogue;
 
 	
-	public CustomerVO(String customer, String dialogue, String recepie) {
+	public CustomerVO(String customer, String dialogue) {
 		super();
 		this.customer = customer;
 		this.dialogue = dialogue;
@@ -17,18 +17,12 @@ public class CustomerVO {
 
 	public String getCustomer() {
 		return customer;
-	}
-
-	public void setCustomer(String customer) {
-		this.customer = customer;
+	
 	}
 
 	public String getDialogue() {
 		return dialogue;
 	}
 
-	public void setDialogue(String dialogue) {
-		this.dialogue = dialogue;
-	}
 	
 }
