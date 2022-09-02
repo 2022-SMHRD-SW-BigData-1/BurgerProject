@@ -17,7 +17,7 @@ public class BurgerStore {
 		User();
 		start();
 		selectLevel();
-		System.out.println("로딩..............");
+		loading();
 		play();
 
 	}
@@ -191,17 +191,17 @@ public class BurgerStore {
 	}
 
 	public static void play() {
-		ingredientCTRLMethod Method = new ingredientCTRLMethod();
+		
 		long start = System.currentTimeMillis();
 		long time = 3*60*10;
 		while ((System.currentTimeMillis() - start) < time) {
-			PrintMenu();
-			System.out.print("<선택> : ");
+			PrintMenu(); // [1]재료구매 [2]주방 및 제작 [3]햄버거 판매 [4]재료 재고파악 [5]포기
+			System.out.print("\t\t\t<선택> : ");
 			int choice = sc.nextInt();
 
 			switch (choice) {
 			case 1:
-				Method.BuyIngredient();
+				BuyIngredient(); //[1]육류 [2]채소류 [3]기타류 [4]이전
 				break;
 //		case 2:
 //			manager.deposit();
@@ -216,7 +216,7 @@ public class BurgerStore {
 //			manager.disp();
 //			break;
 			default:
-				System.out.println("잘못입력하셨습니다. 재입력해주세요.");
+				System.out.println("\t\t\t잘못입력하셨습니다. 재입력해주세요.");
 				break;
 			}
 		}
@@ -225,8 +225,83 @@ public class BurgerStore {
 
 	public static void PrintMenu() {
 		System.out.println();
-		System.out.println("======================= Menu ========================");
-		System.out.println("[1]재료구매 [2]주방 및 제작 [3]햄버거 판매 [4]재료 재고파악 [5]포기");
+		System.out.println("\t\t\t======================= Menu ========================");
+		System.out.println("\t\t\t[1]재료구매 [2]주방 및 제작 [3]햄버거 판매 [4]재료 재고파악 [5]포기");
 	}
 
+	public static void loading() {
+		try {
+			System.out.print("\t\t\t로딩중");
+			for (int i =0; i < 3; i++) {
+				Thread.sleep(500);
+				System.out.print("-----");
+			}
+			for (int i =0; i < 2; i++) {
+				Thread.sleep(700);
+				System.out.print("-----");
+			}
+			System.out.print("아직도 로딩중");
+			for (int i =0; i < 5; i++) {
+				Thread.sleep(200);
+				System.out.print("-----");
+			}
+			System.out.println("끝!!!");
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void BuyIngredient() {
+		System.out.println("\t\t\t[1]육류 [2]채소류 [3]기타류 [4]이전");
+		System.out.print("\t\t\t<선택> : ");
+		int num1 = sc.nextInt();
+
+		if (num1 == 1) {
+			System.out.println("\t\t\t[1]고기패티 [2]새우패티 [3]치킨패티 [4]베이컨 [5]이전");
+			System.out.print("\t\t\t<선택> : ");
+			int num2 = sc.nextInt();
+
+			switch (num2) {
+			case 1:
+				System.out.println("\t\t\t고기패티를 구매하였습니다.");
+				break;
+			case 2:
+				System.out.println("\t\t\t새우패티를 구매하였습니다.");
+				break;
+			case 3:
+				System.out.println("\t\t\t치킨패티를 구매하였습니다.");
+				break;
+			case 4:
+				System.out.println("\t\t\t베이컨를 구매하였습니다.");
+				break;
+			case 5:
+				System.out.println("\t\t\t이전으로 돌아가겠습니다.");
+				break;
+			}
+		}
+
+		if (num1 == 2) {
+			System.out.println("\t\t\t[1]토마토 [2]피클 [3]양상추 [4]이전");
+			System.out.print("\t\t\t<선택> : ");
+			int num2 = sc.nextInt();
+
+			for (int i = 1; i <= 3; i++) {
+				if (num2 == i) {
+					System.out.println("\t\t\t재료구매완료");
+				}
+			}
+		}
+
+		if (num1 == 3) {
+			System.out.println("\t\t\t[1]빵 [2]머스타드&케찹 [3]치즈 [4]이전");
+			System.out.print("\t\t\t<선택> : ");
+			int num2 = sc.nextInt();
+
+			for (int i = 1; i <= 3; i++) {
+				if (num2 == i) {
+					System.out.println("\t\t\t재료구매완료");
+				}
+			}
+		}
+	}
 }
