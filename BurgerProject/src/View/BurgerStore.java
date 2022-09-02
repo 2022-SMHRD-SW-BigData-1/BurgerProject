@@ -626,7 +626,7 @@ public class BurgerStore {
 				+ "개, [4]치즈 : " + Cntcheese + "개");
 	}
 
-	public static void coungGui() {
+	public static void countGui() {
 		JFrame jframe = new JFrame();
 		JLabel jLabel = new JLabel();
 		jframe.setLayout(new FlowLayout());
