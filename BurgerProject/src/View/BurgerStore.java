@@ -85,6 +85,8 @@ public class BurgerStore {
 				System.out.println("\t\t\t\t=========================");
 			} else if (enu == 4) {
 				break;
+			} else {
+				System.out.println("\t\t\t\t잘못 입력하셨습니다.");
 			}
 		}
 	}
@@ -422,23 +424,23 @@ public class BurgerStore {
 
 		while (true) {
 
-			System.out.println("햄버거에 들어갈 재료를 골라주세요.");
-			System.out.println("[1]육류 [2]채소류 [3]기타류 [4]햄버거완성 [5]처음화면으로 이동");
-			System.out.print("<선택> : ");
+			System.out.println("\t\t\t햄버거에 들어갈 재료를 골라주세요.");
+			System.out.println("\t\t\t[1]육류 [2]채소류 [3]기타류 [4]햄버거완성 [5]처음화면으로 이동");
+			System.out.print("\t\t\t<선택> : ");
 			int num1 = sc.nextInt();
 
 			if (num1 == 1) {
-				System.out.println("[1]고기패티 [2]새우패티 [3]치킨패티 [4]베이컨 [5]이전");
-				System.out.print("<선택> : ");
+				System.out.println("\t\t\t[1]고기패티 [2]새우패티 [3]치킨패티 [4]베이컨 [5]이전");
+				System.out.print("\t\t\t<선택> : ");
 				int num2 = sc.nextInt();
 
 				switch (num2) {
 				case 1:
 					if (Cntmeatpatty <= 0) {
-						System.out.println("고기패티의 재고가 부족합니다.");
+						System.out.println("\t\t\t고기패티의 재고가 부족합니다.");
 						System.out.println();
 					} else {
-						System.out.println("고기패티를 추가했습니다.");
+						System.out.println("\t\t\t고기패티를 추가했습니다.");
 						System.out.println();
 						arr[i1] = "고기패티";
 						i1++;
@@ -447,10 +449,10 @@ public class BurgerStore {
 					break;
 				case 2:
 					if (Cntshrimppatty <= 0) {
-						System.out.println("새우패티의 재고가 부족합니다.");
+						System.out.println("\t\t\t새우패티의 재고가 부족합니다.");
 						System.out.println();
 					} else {
-						System.out.println("새우패티를 추가했습니다.");
+						System.out.println("\t\t\t새우패티를 추가했습니다.");
 						System.out.println();
 						arr[i1] = "새우패티";
 						i1++;
@@ -459,22 +461,22 @@ public class BurgerStore {
 					break;
 				case 3:
 					if (Cntchickenpatty <= 0) {
-						System.out.println("치킨패티의 재고가 부족합니다.");
+						System.out.println("\t\t\t치킨패티의 재고가 부족합니다.");
 						System.out.println();
 					} else {
-						System.out.println("치킨패티를 추가했습니다.");
+						System.out.println("\t\t\t치킨패티를 추가했습니다.");
 						System.out.println();
-						arr[i1] = "치킨패티";
+						arr[i1] = "\t\t\t치킨패티";
 						i1++;
 						Cntchickenpatty--;
 					}
 					break;
 				case 4:
 					if (Cntbacon <= 0) {
-						System.out.println("베이컨의 재고가 부족합니다.");
+						System.out.println("\t\t\t베이컨의 재고가 부족합니다.");
 						System.out.println();
 					} else {
-						System.out.println("베이컨를 추가했습니다.");
+						System.out.println("\t\t\t베이컨를 추가했습니다.");
 						System.out.println();
 						arr[i1] = "베이컨";
 						i1++;
@@ -482,7 +484,7 @@ public class BurgerStore {
 					}
 					break;
 				case 5:
-					System.out.println("이전으로 돌아가겠습니다.");
+					System.out.println("\t\t\t이전으로 돌아가겠습니다.");
 					System.out.println();
 					continue;
 				}
@@ -490,17 +492,17 @@ public class BurgerStore {
 			}
 
 			if (num1 == 2) {
-				System.out.println("[1]토마토 [2]피클 [3]양상추 [4]이전");
-				System.out.print("<선택> : ");
+				System.out.println("\t\t\t[1]토마토 [2]피클 [3]양상추 [4]이전");
+				System.out.print("\t\t\t<선택> : ");
 				int num3 = sc.nextInt();
 
 				switch (num3) {
 				case 1:
 					if (Cnttomato <= 0) {
-						System.out.println("토마토의 재고가 부족합니다.");
+						System.out.println("\t\t\t토마토의 재고가 부족합니다.");
 						System.out.println();
 					} else {
-						System.out.println("토마토를 추가했습니다.");
+						System.out.println("\t\t\t토마토를 추가했습니다.");
 						System.out.println();
 						arr[i1] = "토마토";
 						i1++;
@@ -509,10 +511,10 @@ public class BurgerStore {
 					break;
 				case 2:
 					if (Cntpickle <= 0) {
-						System.out.println("피클의 재고가 부족합니다.");
+						System.out.println("\t\t\t피클의 재고가 부족합니다.");
 						System.out.println();
 					} else {
-						System.out.println("피클을 추가했습니다.");
+						System.out.println("\t\t\t피클을 추가했습니다.");
 						System.out.println();
 						arr[i1] = "피클";
 						i1++;
@@ -521,10 +523,10 @@ public class BurgerStore {
 					break;
 				case 3:
 					if (Cntcabbage <= 0) {
-						System.out.println("양상추의 재고가 부족합니다.");
+						System.out.println("\t\t\t양상추의 재고가 부족합니다.");
 						System.out.println();
 					} else {
-						System.out.println("양상추를 추가했습니다.");
+						System.out.println("\t\t\t양상추를 추가했습니다.");
 						System.out.println();
 						arr[i1] = "양상추";
 						i1++;
@@ -532,24 +534,24 @@ public class BurgerStore {
 					}
 					break;
 				case 4:
-					System.out.println("이전으로 돌아가겠습니다.");
+					System.out.println("\t\t\t이전으로 돌아가겠습니다.");
 					System.out.println();
 					continue;
 				}
 			}
 
 			if (num1 == 3) {
-				System.out.println("[1]빵 [2]머스타드 [3]케찹 [4]치즈 [5]이전");
-				System.out.print("<선택> : ");
+				System.out.println("\t\t\t[1]빵 [2]머스타드 [3]케찹 [4]치즈 [5]이전");
+				System.out.print("\t\t\t<선택> : ");
 				int num4 = sc.nextInt();
 
 				switch (num4) {
 				case 1:
 					if (Cntbread <= 0) {
-						System.out.println("빵의 재고가 부족합니다.");
+						System.out.println("\t\t\t빵의 재고가 부족합니다.");
 						System.out.println();
 					} else {
-						System.out.println("뺭을 추가했습니다.");
+						System.out.println("\t\t\t빵을 추가했습니다.");
 						System.out.println();
 						arr[i1] = "빵";
 						i1++;
@@ -558,10 +560,10 @@ public class BurgerStore {
 					break;
 				case 2:
 					if (Cntmustard <= 0) {
-						System.out.println("머스타드의 재고가 부족합니다.");
+						System.out.println("\t\t\t머스타드의 재고가 부족합니다.");
 						System.out.println();
 					} else {
-						System.out.println("머스타드를 추가했습니다.");
+						System.out.println("\t\t\t머스타드를 추가했습니다.");
 						System.out.println();
 						arr[i1] = "머스타드";
 						i1++;
@@ -570,10 +572,10 @@ public class BurgerStore {
 					break;
 				case 3:
 					if (Cntketchup <= 0) {
-						System.out.println("케찹이 부족합니다.");
+						System.out.println("\t\t\t케찹이 부족합니다.");
 						System.out.println();
 					} else {
-						System.out.println("케찹을 추가했습니다.");
+						System.out.println("\t\t\t케찹을 추가했습니다.");
 						System.out.println();
 						arr[i1] = "케찹";
 						i1++;
@@ -582,10 +584,10 @@ public class BurgerStore {
 					break;
 				case 4:
 					if (Cntcheese <= 0) {
-						System.out.println("치즈의 재고가 부족합니다.");
+						System.out.println("\t\t\t치즈의 재고가 부족합니다.");
 						System.out.println();
 					} else {
-						System.out.println("치즈를 추가했습니다.");
+						System.out.println("\t\t\t치즈를 추가했습니다.");
 						System.out.println();
 						arr[i1] = "치즈";
 						i1++;
@@ -593,7 +595,7 @@ public class BurgerStore {
 					}
 					break;
 				case 5:
-					System.out.println("이전으로 돌아가겠습니다.");
+					System.out.println("\t\t\t이전으로 돌아가겠습니다.");
 					System.out.println();
 					continue;
 				}
@@ -601,13 +603,13 @@ public class BurgerStore {
 			}
 
 			if (num1 == 4) {
-				System.out.println("햄버거가 완성되었습니다.");
+				System.out.println("\t\t\t햄버거가 완성되었습니다.");
 				System.out.println();
 				break;
 			}
 
 			if (num1 == 5) {
-				System.out.println("처음화면으로 이동합니다.");
+				System.out.println("\t\t\t처음화면으로 이동합니다.");
 				System.out.println();
 				break;
 			}
