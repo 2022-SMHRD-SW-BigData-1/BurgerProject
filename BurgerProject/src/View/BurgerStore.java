@@ -60,7 +60,7 @@ public class BurgerStore {
 			play();
 			System.out.println("\t\t\t게임이 끝났습니다. 정산결과 당신의 점수는 " + score + "점 입니다.");
 			ranking();
-			System.out.println("게임을 계속 하시겠습니까? Y/N");
+			System.out.println("\t\t\t게임을 계속 하시겠습니까? Y/N");
 			String choice = sc.next();
 			if (choice.equals("y") || choice.equals("Y")) {
 				continue;
@@ -356,7 +356,7 @@ public class BurgerStore {
 
 	public static void play() {
 		long start = System.currentTimeMillis();
-		int minute = 20;
+		int minute = 60;
 		long time = minute * 1000;
 
 		escapeN(30);
