@@ -909,14 +909,35 @@ public class BurgerStore {
 					++cntlength;
 				}
 			}
-			if (cntlength == easy.length) {
-				escapeN(2);
-				System.out.println("\t\t\t버거 판매에 성공하였습니다.");
-				score += 500;
-				System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
-				check = 0;
-				escapeN(10);
-
+			if (ans.size() == 3) {
+				if (cntlength == easy.length) {
+					escapeN(2);
+					System.out.println("\t\t\t버거 판매에 성공하였습니다.");
+					score += 300;
+					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
+					check = 0;
+					escapeN(10);
+				}
+			}
+			if (ans.size() == 4) {
+				if (cntlength == easy.length) {
+					escapeN(2);
+					System.out.println("\t\t\t버거 판매에 성공하였습니다.");
+					score += 400;
+					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
+					check = 0;
+					escapeN(10);
+				}
+			}
+			if (ans.size() == 5) {
+				if (cntlength == easy.length) {
+					escapeN(2);
+					System.out.println("\t\t\t버거 판매에 성공하였습니다.");
+					score += 500;
+					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
+					check = 0;
+					escapeN(10);
+				}
 			}
 		} else if (level == 2) {
 			for (int j = 0; j < normal.length; j++) {
@@ -932,14 +953,35 @@ public class BurgerStore {
 					++cntlength;
 				}
 			}
-			if (cntlength == normal.length) {
-				escapeN(2);
-				System.out.println("\t\t\t버거 판매에 성공하였습니다.");
-				score += 500;
-				System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
-				check = 0;
-				escapeN(10);
-
+			if (ans.size() == 5) {
+				if (cntlength == normal.length) {
+					escapeN(2);
+					System.out.println("\t\t\t버거 판매에 성공하였습니다.");
+					score += 750;
+					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
+					check = 0;
+					escapeN(10);
+				}
+			}
+			if (ans.size() == 6) {
+				if (cntlength == normal.length) {
+					escapeN(2);
+					System.out.println("\t\t\t버거 판매에 성공하였습니다.");
+					score += 900;
+					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
+					check = 0;
+					escapeN(10);
+				}
+			}
+			if (ans.size() == 7) {
+				if (cntlength == normal.length) {
+					escapeN(2);
+					System.out.println("\t\t\t버거 판매에 성공하였습니다.");
+					score += 1050;
+					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
+					check = 0;
+					escapeN(10);
+				}
 			}
 		} else if (level == 3) {
 			for (int j = 0; j < hard.length; j++) {
@@ -955,14 +997,35 @@ public class BurgerStore {
 					++cntlength;
 				}
 			}
-			if (cntlength == hard.length) {
-				escapeN(2);
-				System.out.println("\t\t\t버거 판매에 성공하였습니다.");
-				score += 500;
-				System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
-				check = 0;
-				escapeN(10);
-
+			if (ans.size() == 7) {
+				if (cntlength == hard.length) {
+					escapeN(2);
+					System.out.println("\t\t\t버거 판매에 성공하였습니다.");
+					score += 1400;
+					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
+					check = 0;
+					escapeN(10);
+				}
+			}
+			if (ans.size() == 8) {
+				if (cntlength == hard.length) {
+					escapeN(2);
+					System.out.println("\t\t\t버거 판매에 성공하였습니다.");
+					score += 1600;
+					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
+					check = 0;
+					escapeN(10);
+				}
+			}
+			if (ans.size() == 9) {
+				if (cntlength == hard.length) {
+					escapeN(2);
+					System.out.println("\t\t\t버거 판매에 성공하였습니다.");
+					score += 1800;
+					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
+					check = 0;
+					escapeN(10);
+				}
 			}
 		}
 		ans.clear();
