@@ -22,7 +22,7 @@ public class arrayCTRL {
 	}
 
 	public static String[] Normal() {
-		int num = rd.nextInt(5) + 3;
+		int num = rd.nextInt(3) + 5;
 		recipe = new String[num];
 		recipe[0] = "빵";
 		recipe[recipe.length - 1] = "빵";
@@ -36,7 +36,7 @@ public class arrayCTRL {
 	}
 
 	public static String[] Hard() {
-		int num = rd.nextInt(7) + 3;
+		int num = rd.nextInt(3) + 5;
 		recipe = new String[num];
 		recipe[0] = "빵";
 		recipe[recipe.length - 1] = "빵";

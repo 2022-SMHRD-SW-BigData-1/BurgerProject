@@ -194,112 +194,112 @@ public class BurgerStore {
 	public static void startLogo() {
 		try {
 			System.out.print(
-					"                                                                                                    \r");
+					"                                                                                                    \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                                                                                                    \r");
+					"                                                                                                    \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                                          WWWWWWWWWWWWWWWW                                          \r");
+					"                                          WWWWWWWWWWWWWWWW                                          \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                                  WWNXXKK00OOOkkkkkkkOOOO00KKXXNWW                                  \r");
+					"                                  WWNXXKK00OOOkkkkkkkOOOO00KKXXNWW                                  \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                              WNXK0OkxxxxxxxxxxxxxxxxxxxxxxxxxxkO0KXNW                              \r");
+					"                              WNXK0OkxxxxxxxxxxxxxxxxxxxxxxxxxxkO0KXNW                              \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                           WNKOkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxk0KNW                           \r");
+					"                           WNKOkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxk0KNW                           \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                         WX0kxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxk0XW                         \r");
+					"                         WX0kxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxk0XW                         \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                       WXOxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxk0XW                       \r");
+					"                       WXOxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxk0XW                       \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                      WKkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxkKW                      \r");
+					"                      WKkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxkKW                      \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                     WKkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxkKW                     \r");
+					"                     WKkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxkKW                     \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                     NOxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxON                     \r");
+					"                     NOxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxON                     \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                     WX000000000000000000000000000000000000000000000000000000KW                     \r");
+					"                     WX000000000000000000000000000000000000000000000000000000KW                     \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                     WXOOkO0XWWXO0XWX0OXNXOOOO0XWW WNX0OkO0XWN0OOOO0XN0OOOOKNW                      \r");
+					"                     WXOOkO0XWWXO0XWX0OXNXOOOO0XWW WNX0OkO0XWN0OOOO0XN0OOOOKNW                      \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                     Ko;;::;cOKd;;xXx;;d0o;;;;;cxXNKdc;;;;;o0k:;;;;:xx:;;;;:oKW                     \r");
+					"                     Ko;;::;cOKd;;xXx;;d0o;;;;;cxXNKdc;;;;;o0k:;;;;:xx:;;;;:oKW                     \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                     0l,:do;;d0o,;dKd;,lkl,;od:,cxko;;cddookKx;,:lokKx;,cdc,;xN                     \r");
+					"                     0l,:do;;d0o,;dKd;,lkl,;od:,cxko;;cddookKx;,:lokKx;,cdc,;xN                     \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                     0l,;c:;;x0o,;dKd;,lkl,;::;:xkoc,:xxc:coOd;,;;:dKx;,;c;;lKW                     \r");
+					"                     0l,;c:;;x0o,;dKd;,lkl,;::;:xkoc,:xxc:coOd;,;;:dKx;,;c;;lKW                     \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                     0l,:xd:,cxo,,lkl;,okl,;c:,:xOkl,;ldl:,;dd;,:ldkKx;,:c;;oKW                     \r");
+					"                     0l,:xd:,cxo,,lkl;,okl,;c:,:xOkl,;ldl:,;dd;,:ldkKx;,:c;;oKW                     \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                     Kl,;::;;o0kc;;;;;ck0o;;xkc,:xXOo;;;:;;o0x;,;;;cxd;,oko;;oX                     \r");
+					"                     Kl,;::;;o0kc;;;;;ck0o;;xkc,:xXOo;;;:;;o0x;,;;;cxd;,oko;;oX                     \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                     W0xddxk0NWN0xdxxOKNXkxkXN0xx0XNX0kxxxkKNXOkkkxk00xdOXKkk0N                     \r");
+					"                     W0xddxk0NWN0xdxxOKNXkxkXN0xx0XNX0kxxxkKNXOkkkxk00xdOXKkk0N                     \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                     WOoccd0WWXxlclkXW0occoONW0dccloONWW0occo0W WN0xolccclox0N                      \r");
+					"                     WOoccd0WWXxlclkXW0occoONW0dccloONWW0occo0W WN0xolccclox0N                      \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                     Kl,,,;dX0l;,,,cOKo,,,,c0Xd;,,,,:xNNd;,,,oXW0o:,,,,,,,,,c0W                     \r");
+					"                     Kl,,,;dX0l;,,,cOKo,,,,c0Xd;,,,,:xNNd;,,,oXW0o:,,,,,,,,,c0W                     \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                     0l,,,,coc,,,;:xXKl,,,,cOXo,,,,,,:xKo,,,,lK0l,,,;cdxxdllxX                      \r");
+					"                     0l,,,,coc,,,;:xXKl,,,,cOXo,,,,,,:xKo,,,,lK0l,,,;cdxxdllxX                      \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                     0l,,,,,,,,,:o0WWKl,,,,cOXo,,,,,,,:lc,,,,l0d;,,;o00kxddx0N                      \r");
+					"                     0l,,,,,,,,,:o0WWKl,,,,cOXo,,,,,,,:lc,,,,l0d;,,;o00kxddx0N                      \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                     0l,,,,,,,,,:xXW Kl,,,,cOXo,,,,,;;,,,,,,,lOo;,,;x0o,,,,,:xN                     \r");
+					"                     0l,,,,,,,,,:xXW Kl,,,,cOXo,,,,,;;,,,,,,,lOo;,,;x0o,,,,,:xN                     \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                     0l,,,,:c;,,,;o0NKl,,,,cOXo,,,,,lxl;,,,,,l0x;,,,ckkdl;,,,lKW                    \r");
+					"                     0l,,,,:c;,,,;o0NKl,,,,cOXo,,,,,lxl;,,,,,l0x;,,,ckkdl;,,,lKW                    \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                     Kl,,,,oOo;,,,,:k0l,,,,cOXo,,,,,oK0l;,,,,oKKd;,,;:llc;,,;dN                     \r");
+					"                     Kl,,,,oOo;,,,,:k0l,,,,cOXo,,,,,oK0l;,,,,oKKd;,,;:llc;,,;dN                     \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                     Xo;,,;xNXxc;,,;xKd;,,;lKNx;,,,;dNW0l;,,;dNWXkl:;,,,,,;cxX                      \r");
+					"                     Xo;,,;xNXxc;,,;xKd;,,;lKNx;,,,;dNW0l;,,;dNWXkl:;,,,,,;cxX                      \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                     WXkxxOXW WKkxxOXWXOxdkKWWXOxxxkXW WXkxxkXW  WN0kxxdxkOXW                       \r");
+					"                     WXkxxOXW WKkxxOXWXOxdkKWWXOxxxkXW WXkxxkXW  WN0kxxdxkOXW                       \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                     WXKK0KKKKKKKKKKKKKK00KKKKKK0KKKKKKKKKKKKKKKKKKKKKK000KKKX                      \r");
+					"                     WXKK0KKKKKKKKKKKKKK00KKKKKK0KKKKKKKKKKKKKKKKKKKKKK000KKKX                      \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                     NOxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxO                      \r");
+					"                     NOxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxO                      \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                     WNOkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxkOX                      \r");
+					"                     WNOkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxkOX                      \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                       WX0OkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxkO0XN                       \r");
+					"                       WX0OkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxkO0XN                       \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                         WWNXK0OOkkkxxxxxxxxxxxxxxxxxxxxxxxxxxxxkkkOO0KXNWWX                        \r");
+					"                         WWNXK0OOkkkxxxxxxxxxxxxxxxxxxxxxxxxxxxxkkkOO0KXNWWX                        \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                               WWWNNXXXXKKKKKKKKKKKKKKKKKKKKXXXXNNWWWWN                             \r");
+					"                               WWWNNXXXXKKKKKKKKKKKKKKKKKKKKXXXXNNWWWWN                             \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                                                                                                    \r");
+					"                                                                                                    \n");
 			Thread.sleep(60);
 			System.out.print(
-					"                                                                                                    \r");
+					"                                                                                                    \n");
 			Thread.sleep(60);
 			System.out.println(
 					"                                                                                                      ");
@@ -321,7 +321,7 @@ public class BurgerStore {
 
 	public static void play() {
 		long start = System.currentTimeMillis();
-		int minute = 90;
+		int minute = 20;
 		long time = minute * 1000;
 
 		escapeN(30);
