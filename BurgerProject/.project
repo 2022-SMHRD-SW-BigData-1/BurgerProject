@@ -14,4 +14,31 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/music/customer.mp3</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Desktop/BGM/customer.mp3</locationURI>
+		</link>
+		<link>
+			<name>src/music/ending.mp3</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Desktop/BGM/ending.mp3</locationURI>
+		</link>
+		<link>
+			<name>src/music/mainbgm.mp3</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Desktop/BGM/mainbgm.mp3</locationURI>
+		</link>
+		<link>
+			<name>src/music/pro.mp3</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Desktop/BGM/pro.mp3</locationURI>
+		</link>
+		<link>
+			<name>src/music/start.mp3</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Desktop/BGM/start.mp3</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>

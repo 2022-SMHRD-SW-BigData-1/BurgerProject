@@ -15,6 +15,7 @@ import CTRL.DAO;
 import CTRL.arrayCTRL;
 import CTRL.customerCTRL;
 import CTRL.customerCharCTRL;
+import CTRL.musicCTRL;
 
 public class BurgerStore {
 	static DAO dao = new DAO();
@@ -59,18 +60,26 @@ public class BurgerStore {
 	static Timer timer = new Timer();
 
 	public static void main(String[] args) {
+		musicCTRL mp3 = new musicCTRL();
 		while (true) {
 			endcheck = 1;
+			mp3.playstop("mainbgm");
 			startLogo();
 			User();
+			mp3.playstop("프롤로그");
 			start();
 			selectLevel();
 			loading();
+			mp3.stop("프롤로그");
+			mp3.playstop("게임진행");
 			play();
+			mp3.stop("게임진행");
+			mp3.playstop("엔딩");
 			System.out.println("\t\t\t게임이 끝났습니다. 정산결과 당신의 점수는 " + score + "점 입니다.");
 			ranking();
 			System.out.print("\t\t\t게임을 계속 하시겠습니까? Y/N");
 			String choice = sc.next();
+			mp3.stop("엔딩");
 			if (choice.equals("y") || choice.equals("Y")) {
 				continue;
 			} else {
@@ -364,6 +373,7 @@ public class BurgerStore {
 	}
 
 	public static void play() {
+		musicCTRL mp3 = new musicCTRL();
 		long start = System.currentTimeMillis();
 		int minute = 60;
 		long time = minute * 1000;
@@ -372,6 +382,7 @@ public class BurgerStore {
 		startTimeGui(minute);
 		while ((System.currentTimeMillis() - start) < time) {
 			if (check == 0) {
+				mp3.custbgm();
 				cusAppear(level);
 				check = 1;
 			} else {
