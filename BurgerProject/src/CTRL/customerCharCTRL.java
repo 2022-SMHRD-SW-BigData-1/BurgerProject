@@ -1,0 +1,157 @@
+package CTRL;
+
+import java.util.ArrayList;
+
+import Model.CustomerCharVO;
+
+public class customerCharCTRL {
+	ArrayList<CustomerCharVO> ccv = new ArrayList<>();
+
+	public customerCharCTRL() {
+		ccv.add(new CustomerCharVO("\t\t\t                                \n" 
+				+ "\t\t\t          ████████              \n"
+				+ "\t\t\t        ████      ████          \n" 
+				+ "\t\t\t        ██          ██          \n"
+				+ "\t\t\t        ██          ██          \n" 
+				+ "\t\t\t        ██        ████          \n"
+				+ "\t\t\t          ██████████            \n" 
+				+ "\t\t\t              ██        ██      \n"
+				+ "\t\t\t              ██      ████      \n" 
+				+ "\t\t\t        ██████████████          \n"
+				+ "\t\t\t        ██    ██                \n" 
+				+ "\t\t\t              ██                \n"
+				+ "\t\t\t            ████████            \n" 
+				+ "\t\t\t            ██    ████          \n"
+				+ "\t\t\t          ████                  \n" 
+				+ "\t\t\t                                \n"));
+		ccv.add(new CustomerCharVO("\t\t\t                                \n"
+				+ "\t\t\t          ████████              \n"
+				+ "\t\t\t        ████      ████          \n"
+				+ "\t\t\t        ██          ██          \n"
+				+ "\t\t\t        ██          ██          \n"
+				+ "\t\t\t        ██        ████          \n"
+				+ "\t\t\t          ██████████            \n"
+				+ "\t\t\t          ██████████            \n"
+				+ "\t\t\t        ████  ██    ████        \n"
+				+ "\t\t\t      ████    ██    ████        \n"
+				+ "\t\t\t        ████  ██  ████          \n"
+				+ "\t\t\t          ██████  ██            \n"
+				+ "\t\t\t            ████████            \n"
+				+ "\t\t\t            ██    ████          \n"
+				+ "\t\t\t          ████                  \n"
+				+ "\t\t\t                                \n"
+				+ ""));
+		ccv.add(new CustomerCharVO("\t\t\t                                \n"
+				+ "\t\t\t          ████████              \n"
+				+ "\t\t\t        ████      ████    ██    \n"
+				+ "\t\t\t        ██          ██  ██      \n"
+				+ "\t\t\t        ██          ████        \n"
+				+ "\t\t\t        ██        ████          \n"
+				+ "\t\t\t          ██████████            \n"
+				+ "\t\t\t            ████                \n"
+				+ "\t\t\t          ██████                \n"
+				+ "\t\t\t      ████    ██                \n"
+				+ "\t\t\t    ████      ██                \n"
+				+ "\t\t\t              ██                \n"
+				+ "\t\t\t            ████████            \n"
+				+ "\t\t\t            ██    ████          \n"
+				+ "\t\t\t          ████        ██        \n"
+				+ "\t\t\t     ██████             ████    \n"
+				+ ""));
+		ccv.add(new CustomerCharVO("\t\t\t                                \n"
+				+ "\t\t\t            ██████              \n"
+				+ "\t\t\t          ██      ██            \n"
+				+ "\t\t\t        ██          ██          \n"
+				+ "\t\t\t        ██          ██          \n"
+				+ "\t\t\t          ██      ██            \n"
+				+ "\t\t\t            ██████              \n"
+				+ "\t\t\t              ██                \n"
+				+ "\t\t\t  ██████████████████████████    \n"
+				+ "\t\t\t              ██                \n"
+				+ "\t\t\t              ██                \n"
+				+ "\t\t\t              ██                \n"
+				+ "\t\t\t      ██████████████            \n"
+				+ "\t\t\t      ██          ██████        \n"
+				+ "\t\t\t        ████          ██████    \n"
+				+ "\t\t\t                                \n"
+				+ ""));
+		ccv.add(new CustomerCharVO("\t\t\t                               \n"
+				+ "\t\t\t                      ██████    \n"
+				+ "\t\t\t                    ████        \n"
+				+ "\t\t\t                ██████          \n"
+				+ "\t\t\t            ██████              \n"
+				+ "\t\t\t        ██████  ██              \n"
+				+ "\t\t\t      ████      ██              \n"
+				+ "\t\t\t      ██        ██              \n"
+				+ "\t\t\t          ████████████████      \n"
+				+ "\t\t\t      ████    ██        ████    \n"
+				+ "\t\t\t      ██    ████████      ██    \n"
+				+ "\t\t\t    ████  ████    ████    ████  \n"
+				+ "\t\t\t    ██    ██        ██      ██  \n"
+				+ "\t\t\t    ██    ████    ████      ██  \n"
+				+ "\t\t\t            ████████        ██  \n"
+				+ "\t\t\t                                \n"
+				+ ""));
+		ccv.add(new CustomerCharVO("\t\t\t                                \n"
+				+ "\t\t\t                      ████████  \n"
+				+ "\t\t\t                      ██    ████\n"
+				+ "\t\t\t        ████          ██      ██\n"
+				+ "\t\t\t          ████████    ██      ██\n"
+				+ "\t\t\t                ██████  ████████\n"
+				+ "\t\t\t            ██████████████████  \n"
+				+ "\t\t\t            ██        ████      \n"
+				+ "\t\t\t          ██████        ████    \n"
+				+ "\t\t\t        ████  ██          ████  \n"
+				+ "\t\t\t      ████    ██            ██  \n"
+				+ "\t\t\t    ████      ████          ████\n"
+				+ "\t\t\t    ██          ██              \n"
+				+ "\t\t\t                ████            \n"
+				+ "\t\t\t                                \n"
+				+ "\t\t\t                                \n"
+				+ ""));
+		ccv.add(new CustomerCharVO("\t\t\t                                \n"
+				+ "\t\t\t            ████████            \n"
+				+ "\t\t\t          ████    ██            \n"
+				+ "\t\t\t          ██      ██            \n"
+				+ "\t\t\t          ██      ████          \n"
+				+ "\t\t\t          ████████  ████        \n"
+				+ "\t\t\t          ████        ██        \n"
+				+ "\t\t\t        ████████████████        \n"
+				+ "\t\t\t      ████  ██                  \n"
+				+ "\t\t\t      ██    ██                  \n"
+				+ "\t\t\t        ██████                  \n"
+				+ "\t\t\t          ████████              \n"
+				+ "\t\t\t            ██  ██              \n"
+				+ "\t\t\t            ██  ████            \n"
+				+ "\t\t\t            ██    ██            \n"
+				+ "\t\t\t                                \n"
+				+ ""));
+		ccv.add(new CustomerCharVO("\t\t\t                                \n"
+				+ "\t\t\t          ██████                \n"
+				+ "\t\t\t        ██    ████              \n"
+				+ "\t\t\t████    ████    ██              \n"
+				+ "\t\t\t  ████    ██  ████              \n"
+				+ "\t\t\t      ██    ████                \n"
+				+ "\t\t\t        ██████                  \n"
+				+ "\t\t\t          ████                  \n"
+				+ "\t\t\t          ██  ██                \n"
+				+ "\t\t\t          ██  ██                \n"
+				+ "\t\t\t              ██                \n"
+				+ "\t\t\t          ██████                \n"
+				+ "\t\t\t        ██  ██████              \n"
+				+ "\t\t\t        ████    ████            \n"
+				+ "\t\t\t          ██      ██            \n"
+				+ "\t\t\t                                \n"
+				+ ""));
+
+	}
+
+	public String customerchar() {
+		double random = Math.random();
+		int i = (int) Math.round(random * (ccv.size() - 1));
+		
+		return ccv.get(i).getCuschar();
+
+	}
+
+}

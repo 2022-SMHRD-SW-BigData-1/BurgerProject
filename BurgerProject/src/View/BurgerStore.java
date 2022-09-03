@@ -14,6 +14,7 @@ import javax.swing.JLabel;
 import CTRL.DAO;
 import CTRL.arrayCTRL;
 import CTRL.customerCTRL;
+import CTRL.customerCharCTRL;
 
 public class BurgerStore {
 	static DAO dao = new DAO();
@@ -24,6 +25,7 @@ public class BurgerStore {
 	static String cusName = "";
 	static String cusDia = "";
 	static String cusIng = "";
+	static String cusChar = "";
 	static int Cntmeatpatty = 0;
 	static int Cntshrimppatty = 0;
 	static int Cntchickenpatty = 0;
@@ -44,6 +46,7 @@ public class BurgerStore {
 	static int cntHard = 4;
 	static int score = 10000;
 	static int check = 0;
+	static int endcheck = 1;
 	static int level = 0;
 	static String[] easy;
 	static String[] normal;
@@ -52,6 +55,7 @@ public class BurgerStore {
 
 	public static void main(String[] args) {
 		while (true) {
+			endcheck = 1;
 			startLogo();
 			User();
 			start();
@@ -60,7 +64,7 @@ public class BurgerStore {
 			play();
 			System.out.println("\t\t\t게임이 끝났습니다. 정산결과 당신의 점수는 " + score + "점 입니다.");
 			ranking();
-			System.out.println("\t\t\t게임을 계속 하시겠습니까? Y/N");
+			System.out.print("\t\t\t게임을 계속 하시겠습니까? Y/N");
 			String choice = sc.next();
 			if (choice.equals("y") || choice.equals("Y")) {
 				continue;
@@ -75,7 +79,7 @@ public class BurgerStore {
 					Thread.sleep(500);
 					System.exit(0);
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
+
 					e.printStackTrace();
 				}
 			}
@@ -370,7 +374,7 @@ public class BurgerStore {
 				System.out.println("\t\t\t======================= Menu ========================");
 				System.out.println("\t\t\t[1]재료구매 [2]주방 및 제작 [3]버거 판매 [4]재료 재고파악");
 				System.out.print("\t\t\t<선택> : ");
-				escapeN(10);
+				escapeN(2);
 				int choice = sc.nextInt();
 
 				if (choice == 1) {
@@ -386,7 +390,7 @@ public class BurgerStore {
 					CheckIngredient();
 				} else {
 					System.out.println("\t\t\t잘못 입력 하셨습니다. 재 입력 해주세요.");
-					escapeN(10);
+					escapeN(2);
 				}
 			}
 		}
@@ -425,26 +429,26 @@ public class BurgerStore {
 	}
 
 	public static void BuyIngredient() {
-		while (true) {
+		
+		while (endcheck == 1) {
 
-			escapeN(10);
+			escapeN(2);
 			cusAppear(level);
 			System.out.println("\t\t\t[1]육류 [2]채소류 [3]기타류 [4]처음화면으로 이동");
 			System.out.print("\t\t\t<선택> : ");
-			escapeN(10);
 			int num1 = sc.nextInt();
+			escapeN(5);
 
 			if (num1 == 1) {
 
-				escapeN(10);
+				escapeN(2);
 				cusAppear(level);
 				System.out.println("\t\t\t[1]고기패티(50원)-" + Cntmeatpatty + "개 [2]새우패티(50원)-" + Cntshrimppatty
 						+ "개 [3]치킨패티(50원)-" + Cntchickenpatty + "개 [4]베이컨(50원)-" + Cntbacon + "개 [5]이전");
 				System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 				System.out.print("\t\t\t<선택> : ");
-				escapeN(10);
 				int num2 = sc.nextInt();
-
+				escapeN(5);
 				switch (num2) {
 				case 1:
 
@@ -455,7 +459,7 @@ public class BurgerStore {
 					score -= 50;
 					Cntmeatpatty++;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
-					escapeN(10);
+					escapeN(2);
 					break;
 				case 2:
 
@@ -466,7 +470,7 @@ public class BurgerStore {
 					score -= 50;
 					Cntshrimppatty++;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
-					escapeN(10);
+					escapeN(2);
 					break;
 				case 3:
 
@@ -477,7 +481,7 @@ public class BurgerStore {
 					score -= 50;
 					Cntchickenpatty++;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
-					escapeN(10);
+					escapeN(2);
 					break;
 				case 4:
 
@@ -488,7 +492,7 @@ public class BurgerStore {
 					score -= 50;
 					Cntbacon++;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
-					escapeN(10);
+					escapeN(2);
 					break;
 				case 5:
 
@@ -496,7 +500,7 @@ public class BurgerStore {
 
 					System.out.println("\t\t\t이전으로 돌아가겠습니다.");
 					System.out.println();
-					escapeN(10);
+					escapeN(2);
 					continue;
 				}
 
@@ -504,15 +508,14 @@ public class BurgerStore {
 
 			if (num1 == 2) {
 
-				escapeN(10);
+				escapeN(2);
 				cusAppear(level);
 				System.out.println("\t\t\t[1]토마토(50원)-" + Cnttomato + "개 [2]피클(50원)-" + Cntpickle + "개 [3]양상추(50원)-"
 						+ Cntcabbage + "개 [4]이전");
 				System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 				System.out.print("\t\t\t<선택> : ");
-				escapeN(10);
 				int num3 = sc.nextInt();
-
+				escapeN(5);
 				switch (num3) {
 				case 1:
 
@@ -523,7 +526,7 @@ public class BurgerStore {
 					score -= 50;
 					Cnttomato++;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
-					escapeN(10);
+					escapeN(2);
 					break;
 				case 2:
 
@@ -534,7 +537,7 @@ public class BurgerStore {
 					score -= 50;
 					Cntpickle++;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
-					escapeN(10);
+					escapeN(2);
 					break;
 				case 3:
 
@@ -545,7 +548,7 @@ public class BurgerStore {
 					score -= 50;
 					Cntcabbage++;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
-					escapeN(10);
+					escapeN(2);
 					break;
 				case 4:
 
@@ -553,22 +556,22 @@ public class BurgerStore {
 
 					System.out.println("\t\t\t이전으로 돌아가겠습니다.");
 					System.out.println();
-					escapeN(10);
+					escapeN(2);
 					continue;
 				}
 			}
 
 			if (num1 == 3) {
 
-				escapeN(10);
+				escapeN(2);
 				cusAppear(level);
 				System.out.println("\t\t\t[1]빵(50원)-" + Cntbread + "개 [2]머스타드(50원)-" + Cntmustard + "개 [3]케찹(50원)-"
 						+ Cntketchup + "개 [4]치즈(50원)-" + Cntcheese + "개 [5]이전");
 				System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 				System.out.print("\t\t\t<선택> : ");
-				escapeN(10);
-				int num4 = sc.nextInt();
 
+				int num4 = sc.nextInt();
+				escapeN(5);
 				switch (num4) {
 				case 1:
 
@@ -578,7 +581,7 @@ public class BurgerStore {
 					score -= 50;
 					Cntbread++;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
-					escapeN(10);
+					escapeN(2);
 					break;
 				case 2:
 
@@ -588,7 +591,7 @@ public class BurgerStore {
 					score -= 50;
 					Cntmustard++;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
-					escapeN(10);
+					escapeN(2);
 					break;
 				case 3:
 
@@ -598,7 +601,7 @@ public class BurgerStore {
 					score -= 50;
 					Cntketchup++;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
-					escapeN(10);
+					escapeN(2);
 					break;
 				case 4:
 
@@ -608,14 +611,14 @@ public class BurgerStore {
 					score -= 50;
 					Cntcheese++;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
-					escapeN(10);
+					escapeN(2);
 					break;
 				case 5:
 
 					escapeN(2);
 					System.out.println("\t\t\t이전으로 돌아가겠습니다.");
 					System.out.println();
-					escapeN(10);
+					escapeN(2);
 					continue;
 				}
 
@@ -626,7 +629,7 @@ public class BurgerStore {
 				escapeN(2);
 				System.out.println("\t\t\t처음화면으로 이동합니다.");
 				System.out.println();
-				escapeN(10);
+				escapeN(2);
 				break;
 			}
 
@@ -635,27 +638,27 @@ public class BurgerStore {
 	}
 
 	public static void MakeHamburger() {
+		
+		while (endcheck == 1) {
 
-		while (true) {
-
-			escapeN(10);
+			escapeN(2);
 			cusAppear(level);
 			System.out.println("\t\t\t버거에 들어갈 재료를 골라주세요.");
 			System.out.println("\t\t\t[1]육류 [2]채소류 [3]기타류 [4]버거 완성 [5]재료 버리기 [6]처음화면으로 이동");
 			System.out.print("\t\t\t<선택> : ");
-			escapeN(10);
-			int num1 = sc.nextInt();
 
+			int num1 = sc.nextInt();
+			escapeN(5);
 			if (num1 == 1) {
 
-				escapeN(10);
+				escapeN(2);
 				cusAppear(level);
 				System.out.println("\t\t\t[1]고기패티(" + Cntmeatpatty + ") [2]새우패티(" + Cntshrimppatty + ") [3]치킨패티("
 						+ Cntchickenpatty + ") [4]베이컨(" + Cntbacon + ") [5]이전");
 				System.out.print("\t\t\t<선택> : ");
-				escapeN(10);
-				int num2 = sc.nextInt();
 
+				int num2 = sc.nextInt();
+				escapeN(5);
 				switch (num2) {
 				case 1:
 
@@ -663,12 +666,12 @@ public class BurgerStore {
 						escapeN(2);
 						System.out.println("\t\t\t고기패티의 재고가 부족합니다.");
 						System.out.println();
-						escapeN(10);
+						escapeN(2);
 					} else {
 						escapeN(2);
 						System.out.println("\t\t\t고기패티를 추가했습니다.");
 						System.out.println();
-						escapeN(10);
+						escapeN(2);
 						ans.add("고기패티");
 						Cntmeatpatty--;
 					}
@@ -679,12 +682,12 @@ public class BurgerStore {
 						escapeN(2);
 						System.out.println("\t\t\t새우패티의 재고가 부족합니다.");
 						System.out.println();
-						escapeN(10);
+						escapeN(2);
 					} else {
 						escapeN(2);
 						System.out.println("\t\t\t새우패티를 추가했습니다.");
 						System.out.println();
-						escapeN(10);
+						escapeN(2);
 						ans.add("새우패티");
 						Cntshrimppatty--;
 					}
@@ -695,12 +698,12 @@ public class BurgerStore {
 						escapeN(2);
 						System.out.println("\t\t\t치킨패티의 재고가 부족합니다.");
 						System.out.println();
-						escapeN(10);
+						escapeN(2);
 					} else {
 						escapeN(2);
 						System.out.println("\t\t\t치킨패티를 추가했습니다.");
 						System.out.println();
-						escapeN(10);
+						escapeN(2);
 						ans.add("치킨패티");
 
 						Cntchickenpatty--;
@@ -712,12 +715,12 @@ public class BurgerStore {
 						escapeN(2);
 						System.out.println("\t\t\t베이컨의 재고가 부족합니다.");
 						System.out.println();
-						escapeN(10);
+						escapeN(2);
 					} else {
 						escapeN(2);
 						System.out.println("\t\t\t베이컨를 추가했습니다.");
 						System.out.println();
-						escapeN(10);
+						escapeN(2);
 						ans.add("베이컨");
 
 						Cntbacon--;
@@ -728,7 +731,7 @@ public class BurgerStore {
 					escapeN(2);
 					System.out.println("\t\t\t이전으로 돌아가겠습니다.");
 					System.out.println();
-					escapeN(10);
+					escapeN(2);
 					continue;
 				}
 
@@ -736,14 +739,14 @@ public class BurgerStore {
 
 			if (num1 == 2) {
 
-				escapeN(10);
+				escapeN(2);
 				cusAppear(level);
 				System.out.println(
 						"\t\t\t[1]토마토(" + Cnttomato + ") [2]피클(" + Cntpickle + ") [3]양상추(" + Cntcabbage + ") [4]이전");
 				System.out.print("\t\t\t<선택> : ");
-				escapeN(10);
-				int num3 = sc.nextInt();
 
+				int num3 = sc.nextInt();
+				escapeN(5);
 				switch (num3) {
 				case 1:
 
@@ -751,14 +754,14 @@ public class BurgerStore {
 						escapeN(2);
 						System.out.println("\t\t\t토마토의 재고가 부족합니다.");
 						System.out.println();
-						escapeN(10);
+						escapeN(2);
 					} else {
 						escapeN(2);
 						System.out.println("\t\t\t토마토를 추가했습니다.");
 						System.out.println();
 						ans.add("토마토");
 						Cnttomato--;
-						escapeN(10);
+						escapeN(2);
 					}
 					break;
 				case 2:
@@ -767,12 +770,12 @@ public class BurgerStore {
 						escapeN(2);
 						System.out.println("\t\t\t피클의 재고가 부족합니다.");
 						System.out.println();
-						escapeN(10);
+						escapeN(2);
 					} else {
 						escapeN(2);
 						System.out.println("\t\t\t피클을 추가했습니다.");
 						System.out.println();
-						escapeN(10);
+						escapeN(2);
 						ans.add("피클");
 						Cntpickle--;
 					}
@@ -783,12 +786,12 @@ public class BurgerStore {
 						escapeN(2);
 						System.out.println("\t\t\t양상추의 재고가 부족합니다.");
 						System.out.println();
-						escapeN(10);
+						escapeN(2);
 					} else {
 						escapeN(2);
 						System.out.println("\t\t\t양상추를 추가했습니다.");
 						System.out.println();
-						escapeN(10);
+						escapeN(2);
 						ans.add("양상추");
 
 						Cntcabbage--;
@@ -799,21 +802,21 @@ public class BurgerStore {
 					escapeN(2);
 					System.out.println("\t\t\t이전으로 돌아가겠습니다.");
 					System.out.println();
-					escapeN(10);
+					escapeN(2);
 					continue;
 				}
 			}
 
 			if (num1 == 3) {
 
-				escapeN(10);
+				escapeN(2);
 				cusAppear(level);
 				System.out.println("\t\t\t[1]빵(" + Cntbread + ") [2]머스타드(" + Cntmustard + ") [3]케찹(" + Cntketchup
 						+ ") [4]치즈(" + Cntcheese + ") [5]이전");
 				System.out.print("\t\t\t<선택> : ");
-				escapeN(10);
-				int num4 = sc.nextInt();
 
+				int num4 = sc.nextInt();
+				escapeN(5);
 				switch (num4) {
 				case 1:
 
@@ -821,14 +824,14 @@ public class BurgerStore {
 						escapeN(2);
 						System.out.println("\t\t\t빵의 재고가 부족합니다.");
 						System.out.println();
-						escapeN(10);
+						escapeN(2);
 					} else {
 						escapeN(2);
 						System.out.println("\t\t\t빵을 추가했습니다.");
 						System.out.println();
 						ans.add("빵");
 						Cntbread--;
-						escapeN(10);
+						escapeN(2);
 					}
 					break;
 				case 2:
@@ -837,12 +840,12 @@ public class BurgerStore {
 						escapeN(2);
 						System.out.println("\t\t\t머스타드의 재고가 부족합니다.");
 						System.out.println();
-						escapeN(10);
+						escapeN(2);
 					} else {
 						escapeN(2);
 						System.out.println("\t\t\t머스타드를 추가했습니다.");
 						System.out.println();
-						escapeN(10);
+						escapeN(2);
 						ans.add("머스타드");
 
 						Cntmustard--;
@@ -854,12 +857,12 @@ public class BurgerStore {
 						escapeN(2);
 						System.out.println("\t\t\t케찹이 부족합니다.");
 						System.out.println();
-						escapeN(10);
+						escapeN(2);
 					} else {
 						escapeN(2);
 						System.out.println("\t\t\t케찹을 추가했습니다.");
 						System.out.println();
-						escapeN(10);
+						escapeN(2);
 						ans.add("케찹");
 
 						Cntketchup--;
@@ -871,12 +874,12 @@ public class BurgerStore {
 						escapeN(2);
 						System.out.println("\t\t\t치즈의 재고가 부족합니다.");
 						System.out.println();
-						escapeN(10);
+						escapeN(2);
 					} else {
 						escapeN(2);
 						System.out.println("\t\t\t치즈를 추가했습니다.");
 						System.out.println();
-						escapeN(10);
+						escapeN(2);
 						ans.add("치즈");
 
 						Cntcheese--;
@@ -886,7 +889,7 @@ public class BurgerStore {
 					escapeN(2);
 					System.out.println("\t\t\t이전으로 돌아가겠습니다.");
 					System.out.println();
-					escapeN(10);
+					escapeN(2);
 					continue;
 				}
 
@@ -899,7 +902,7 @@ public class BurgerStore {
 					System.out.print(ans.get(i) + " ");
 				}
 				System.out.println("]");
-				escapeN(10);
+				escapeN(2);
 
 				break;
 			}
@@ -913,14 +916,14 @@ public class BurgerStore {
 					ans.remove(ans.size() - 1);
 				}
 
-				escapeN(10);
+				escapeN(2);
 			}
 			if (num1 == 6) {
 
 				escapeN(2);
 				System.out.println("\t\t\t처음화면으로 이동합니다.");
 				System.out.println();
-				escapeN(10);
+				escapeN(2);
 				break;
 			}
 
@@ -938,7 +941,7 @@ public class BurgerStore {
 					score -= 250;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 					check = 0;
-					escapeN(10);
+
 					break;
 				} else {
 					++cntlength;
@@ -951,7 +954,7 @@ public class BurgerStore {
 					score += 300;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 					check = 0;
-					escapeN(10);
+
 				}
 			}
 			if (ans.size() == 4) {
@@ -961,7 +964,7 @@ public class BurgerStore {
 					score += 400;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 					check = 0;
-					escapeN(10);
+
 				}
 			}
 			if (ans.size() == 5) {
@@ -971,7 +974,7 @@ public class BurgerStore {
 					score += 500;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 					check = 0;
-					escapeN(10);
+
 				}
 			}
 		} else if (level == 2) {
@@ -982,7 +985,7 @@ public class BurgerStore {
 					score -= 250;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 					check = 0;
-					escapeN(10);
+					escapeN(2);
 					break;
 				} else {
 					++cntlength;
@@ -995,7 +998,7 @@ public class BurgerStore {
 					score += 750;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 					check = 0;
-					escapeN(10);
+					escapeN(2);
 				}
 			}
 			if (ans.size() == 6) {
@@ -1005,7 +1008,7 @@ public class BurgerStore {
 					score += 900;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 					check = 0;
-					escapeN(10);
+					escapeN(2);
 				}
 			}
 			if (ans.size() == 7) {
@@ -1015,7 +1018,7 @@ public class BurgerStore {
 					score += 1050;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 					check = 0;
-					escapeN(10);
+					escapeN(2);
 				}
 			}
 		} else if (level == 3) {
@@ -1026,7 +1029,7 @@ public class BurgerStore {
 					score -= 250;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 					check = 0;
-					escapeN(10);
+					escapeN(2);
 					break;
 				} else {
 					++cntlength;
@@ -1039,7 +1042,7 @@ public class BurgerStore {
 					score += 1400;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 					check = 0;
-					escapeN(10);
+					escapeN(2);
 				}
 			}
 			if (ans.size() == 8) {
@@ -1049,7 +1052,7 @@ public class BurgerStore {
 					score += 1600;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 					check = 0;
-					escapeN(10);
+					escapeN(2);
 				}
 			}
 			if (ans.size() == 9) {
@@ -1059,7 +1062,7 @@ public class BurgerStore {
 					score += 1800;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 					check = 0;
-					escapeN(10);
+					escapeN(2);
 				}
 			}
 		}
@@ -1075,7 +1078,7 @@ public class BurgerStore {
 				"\t\t\t<야채류>--[1]토마토 : " + Cnttomato + "개, [2]피클 : " + Cntpickle + "개, [3]양상추 : " + Cntcabbage + "개");
 		System.out.println("\t\t\t<기타류>--[1]빵 : " + Cntbread + "개, [2]머스타드 : " + Cntmustard + "개, [3]케찹 : " + Cntketchup
 				+ "개, [4]치즈 : " + Cntcheese + "개");
-		escapeN(10);
+		escapeN(2);
 	}
 
 	public static void countGui() {
@@ -1114,9 +1117,11 @@ public class BurgerStore {
 	public static void cusAppear(int lev) {
 //		int cnt = 0;
 		customerCTRL cus = new customerCTRL();
+		customerCharCTRL ccv = new customerCharCTRL();
 		if (check == 0) {
 			cusName = cus.customer();
 			cusDia = cus.dialogue();
+			cusChar = ccv.customerchar();
 			if (lev == 1) {
 				easy = ac.Easy();
 				cusIng = Arrays.toString(easy);
@@ -1129,7 +1134,7 @@ public class BurgerStore {
 			}
 
 		}
-
+		System.out.println("\t\t\t" + cusChar);
 		System.out.println("\t\t\t" + cusName);
 		System.out.println("\t\t\t" + cusDia);
 		System.out.println("\t\t\t" + cusIng);
@@ -1198,7 +1203,7 @@ public class BurgerStore {
 		JFrame jframe = new JFrame();
 		JLabel jLabel = new JLabel();
 		jframe.setLayout(new FlowLayout());
-		jframe.setBounds(1750, 0, 170, 100);
+		jframe.setBounds(1200, 0, 170, 100);
 
 		jframe.add(jLabel);
 		jframe.setVisible(true);
@@ -1216,6 +1221,7 @@ public class BurgerStore {
 				if (i < 0) {
 					timer.cancel();
 					jLabel.setText("게임종료!!!");
+					endcheck = 0;
 				}
 			}
 		}, 0, 1000);
