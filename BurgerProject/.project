@@ -18,27 +18,27 @@
 		<link>
 			<name>src/music/customer.mp3</name>
 			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Desktop/BGM/customer.mp3</locationURI>
+			<location>C:/Users/EGEG22A03/Desktop/local repository/BurgerProject/BurgerProject/BurgerProject/src/music/customer.mp3</location>
 		</link>
 		<link>
 			<name>src/music/ending.mp3</name>
 			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Desktop/BGM/ending.mp3</locationURI>
+			<location>C:/Users/EGEG22A03/Desktop/local repository/BurgerProject/BurgerProject/BurgerProject/src/music/ending.mp3</location>
 		</link>
 		<link>
 			<name>src/music/mainbgm.mp3</name>
 			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Desktop/BGM/mainbgm.mp3</locationURI>
+			<location>C:/Users/EGEG22A03/Desktop/local repository/BurgerProject/BurgerProject/BurgerProject/src/music/mainbgm.mp3</location>
 		</link>
 		<link>
 			<name>src/music/pro.mp3</name>
 			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Desktop/BGM/pro.mp3</locationURI>
+			<location>C:/Users/EGEG22A03/Desktop/local repository/BurgerProject/BurgerProject/BurgerProject/src/music/pro.mp3</location>
 		</link>
 		<link>
 			<name>src/music/start.mp3</name>
 			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Desktop/BGM/start.mp3</locationURI>
+			<location>C:/Users/EGEG22A03/Desktop/local repository/BurgerProject/BurgerProject/BurgerProject/src/music/start.mp3</location>
 		</link>
 	</linkedResources>
 </projectDescription>

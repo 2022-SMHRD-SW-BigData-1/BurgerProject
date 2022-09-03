@@ -47,20 +47,22 @@ public class BurgerStore {
 	static int cntHard = 4;
 	static int score = 10000;
 	static int check = 0;
-	static int check2 = 0;
+	static int check2 = 1;
+	static int check3 = 1;
 	static int endcheck = 1;
 	static int level = 0;
 	static String[] easy;
 	static String[] normal;
 	static String[] hard;
 	static ArrayList<String> ans = new ArrayList<>();
-	
+
 	static JFrame jframe = new JFrame();
-	static JLabel jLabel = new JLabel();
 	static Timer timer = new Timer();
 
+	static musicCTRL mp3 = new musicCTRL();
+
 	public static void main(String[] args) {
-		musicCTRL mp3 = new musicCTRL();
+
 		while (true) {
 			endcheck = 1;
 			mp3.playstop("mainbgm");
@@ -76,6 +78,7 @@ public class BurgerStore {
 			mp3.stop("게임진행");
 			mp3.playstop("엔딩");
 			System.out.println("\t\t\t게임이 끝났습니다. 정산결과 당신의 점수는 " + score + "점 입니다.");
+			
 			ranking();
 			System.out.print("\t\t\t게임을 계속 하시겠습니까? Y/N");
 			String choice = sc.next();
@@ -232,11 +235,11 @@ public class BurgerStore {
 				cusAppear(level);
 				++cntAppear;
 				if (cntAppear == cntEasy) {
-					timer.cancel();
+
 				} else if (cntAppear == cntNormal) {
-					timer.cancel();
+
 				} else if (cntAppear == cntHard) {
-					timer.cancel();
+
 				}
 			}
 		};
@@ -382,7 +385,6 @@ public class BurgerStore {
 		startTimeGui(minute);
 		while ((System.currentTimeMillis() - start) < time) {
 			if (check == 0) {
-				mp3.custbgm();
 				cusAppear(level);
 				check = 1;
 			} else {
@@ -410,6 +412,7 @@ public class BurgerStore {
 				}
 			}
 		}
+		
 	}
 
 	public static void loading() {
@@ -459,8 +462,8 @@ public class BurgerStore {
 
 				escapeN(2);
 				cusAppear(level);
-				System.out.println("\t\t\t[1]고기패티(50원)-" + Cntmeatpatty + "개 [2]새우패티(50원)-" + Cntshrimppatty
-						+ "개 [3]치킨패티(50원)-" + Cntchickenpatty + "개 [4]베이컨(50원)-" + Cntbacon + "개 [5]이전");
+				System.out.println("\t\t\t[1]고기패티(40원)-" + Cntmeatpatty + "개 [2]새우패티(40원)-" + Cntshrimppatty
+						+ "개 [3]치킨패티(40원)-" + Cntchickenpatty + "개 [4]베이컨(40원)-" + Cntbacon + "개 [5]이전");
 				System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 				System.out.print("\t\t\t<선택> : ");
 				int num2 = sc.nextInt();
@@ -472,7 +475,7 @@ public class BurgerStore {
 
 					System.out.println("\t\t\t고기패티를 구매하였습니다.");
 					System.out.println();
-					score -= 50;
+					score -= 40;
 					Cntmeatpatty++;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 					escapeN(2);
@@ -483,7 +486,7 @@ public class BurgerStore {
 
 					System.out.println("\t\t\t새우패티를 구매하였습니다.");
 					System.out.println();
-					score -= 50;
+					score -= 40;
 					Cntshrimppatty++;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 					escapeN(2);
@@ -494,7 +497,7 @@ public class BurgerStore {
 
 					System.out.println("\t\t\t치킨패티를 구매하였습니다.");
 					System.out.println();
-					score -= 50;
+					score -= 40;
 					Cntchickenpatty++;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 					escapeN(2);
@@ -505,7 +508,7 @@ public class BurgerStore {
 
 					System.out.println("\t\t\t베이컨를 구매하였습니다.");
 					System.out.println();
-					score -= 50;
+					score -= 40;
 					Cntbacon++;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 					escapeN(2);
@@ -526,7 +529,7 @@ public class BurgerStore {
 
 				escapeN(2);
 				cusAppear(level);
-				System.out.println("\t\t\t[1]토마토(50원)-" + Cnttomato + "개 [2]피클(50원)-" + Cntpickle + "개 [3]양상추(50원)-"
+				System.out.println("\t\t\t[1]토마토(30원)-" + Cnttomato + "개 [2]피클(30원)-" + Cntpickle + "개 [3]양상추(30원)-"
 						+ Cntcabbage + "개 [4]이전");
 				System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 				System.out.print("\t\t\t<선택> : ");
@@ -539,7 +542,7 @@ public class BurgerStore {
 
 					System.out.println("\t\t\t토마토를 구매하였습니다.");
 					System.out.println();
-					score -= 50;
+					score -= 30;
 					Cnttomato++;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 					escapeN(2);
@@ -550,7 +553,7 @@ public class BurgerStore {
 
 					System.out.println("\t\t\t피클을 구매하였습니다.");
 					System.out.println();
-					score -= 50;
+					score -= 30;
 					Cntpickle++;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 					escapeN(2);
@@ -561,7 +564,7 @@ public class BurgerStore {
 
 					System.out.println("\t\t\t양상추를 구매하였습니다.");
 					System.out.println();
-					score -= 50;
+					score -= 30;
 					Cntcabbage++;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 					escapeN(2);
@@ -581,8 +584,8 @@ public class BurgerStore {
 
 				escapeN(2);
 				cusAppear(level);
-				System.out.println("\t\t\t[1]빵(50원)-" + Cntbread + "개 [2]머스타드(50원)-" + Cntmustard + "개 [3]케찹(50원)-"
-						+ Cntketchup + "개 [4]치즈(50원)-" + Cntcheese + "개 [5]이전");
+				System.out.println("\t\t\t[1]빵(20원)-" + Cntbread + "개 [2]머스타드(20원)-" + Cntmustard + "개 [3]케찹(20원)-"
+						+ Cntketchup + "개 [4]치즈(20원)-" + Cntcheese + "개 [5]이전");
 				System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 				System.out.print("\t\t\t<선택> : ");
 
@@ -594,7 +597,7 @@ public class BurgerStore {
 					escapeN(2);
 					System.out.println("\t\t\t빵을 구매하였습니다.");
 					System.out.println();
-					score -= 50;
+					score -= 20;
 					Cntbread++;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 					escapeN(2);
@@ -604,7 +607,7 @@ public class BurgerStore {
 					escapeN(2);
 					System.out.println("\t\t\t머스타드을 구매하였습니다.");
 					System.out.println();
-					score -= 50;
+					score -= 20;
 					Cntmustard++;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 					escapeN(2);
@@ -614,7 +617,7 @@ public class BurgerStore {
 					escapeN(2);
 					System.out.println("\t\t\t케찹을 구매하였습니다.");
 					System.out.println();
-					score -= 50;
+					score -= 20;
 					Cntketchup++;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 					escapeN(2);
@@ -624,7 +627,7 @@ public class BurgerStore {
 					escapeN(2);
 					System.out.println("\t\t\t치즈를 구매하였습니다.");
 					System.out.println();
-					score -= 50;
+					score -= 20;
 					Cntcheese++;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 					escapeN(2);
@@ -926,10 +929,10 @@ public class BurgerStore {
 
 				escapeN(2);
 				if (ans.size() == 0) {
-					System.out.println("\t\t\t버릴 재료가 없습니다.");
+					System.out.println("\t\t\t비어있습니다.");
 				} else {
-					System.out.println("\t\t\t마지막에 넣은 재료를 버렸습니다.");
-					ans.remove(ans.size() - 1);
+					System.out.println("\t\t\t모든 재료를 버렸습니다.");
+					ans.clear();
 				}
 
 				escapeN(2);
@@ -952,12 +955,12 @@ public class BurgerStore {
 		if (level == 1) {
 			for (int j = 0; j < easy.length; j++) {
 				if (ans.get(j) != easy[j]) {
+
 					escapeN(2);
 					System.out.println("\t\t\t버거 판매에 실패하였습니다.");
-					score -= 250;
+					score -= 200;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
-					timer.cancel();
-					jframe.setVisible(false);
+
 					check = 0;
 
 					break;
@@ -967,36 +970,36 @@ public class BurgerStore {
 			}
 			if (ans.size() == 3) {
 				if (cntlength == easy.length) {
+
 					escapeN(2);
 					System.out.println("\t\t\t버거 판매에 성공하였습니다.");
 					score += 300;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
-					timer.cancel();
-					jframe.setVisible(false);
+
 					check = 0;
 
 				}
 			}
 			if (ans.size() == 4) {
 				if (cntlength == easy.length) {
+
 					escapeN(2);
 					System.out.println("\t\t\t버거 판매에 성공하였습니다.");
 					score += 400;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
-					timer.cancel();
-					jframe.setVisible(false);
+
 					check = 0;
 
 				}
 			}
 			if (ans.size() == 5) {
 				if (cntlength == easy.length) {
+
 					escapeN(2);
 					System.out.println("\t\t\t버거 판매에 성공하였습니다.");
 					score += 500;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
-					timer.cancel();
-					jframe.setVisible(false);
+
 					check = 0;
 
 				}
@@ -1004,12 +1007,12 @@ public class BurgerStore {
 		} else if (level == 2) {
 			for (int j = 0; j < normal.length; j++) {
 				if (ans.get(j) != normal[j]) {
+
 					escapeN(2);
 					System.out.println("\t\t\t버거 판매에 실패하였습니다.");
-					score -= 250;
+					score -= 400;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
-					timer.cancel();
-					jframe.setVisible(false);
+
 					check = 0;
 					escapeN(2);
 					break;
@@ -1019,36 +1022,36 @@ public class BurgerStore {
 			}
 			if (ans.size() == 5) {
 				if (cntlength == normal.length) {
+
 					escapeN(2);
 					System.out.println("\t\t\t버거 판매에 성공하였습니다.");
 					score += 750;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
-					timer.cancel();
-					jframe.setVisible(false);
+
 					check = 0;
 					escapeN(2);
 				}
 			}
 			if (ans.size() == 6) {
 				if (cntlength == normal.length) {
+
 					escapeN(2);
 					System.out.println("\t\t\t버거 판매에 성공하였습니다.");
 					score += 900;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
-					timer.cancel();
-					jframe.setVisible(false);
+
 					check = 0;
 					escapeN(2);
 				}
 			}
 			if (ans.size() == 7) {
 				if (cntlength == normal.length) {
+
 					escapeN(2);
 					System.out.println("\t\t\t버거 판매에 성공하였습니다.");
 					score += 1050;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
-					timer.cancel();
-					jframe.setVisible(false);
+
 					check = 0;
 					escapeN(2);
 				}
@@ -1056,12 +1059,13 @@ public class BurgerStore {
 		} else if (level == 3) {
 			for (int j = 0; j < hard.length; j++) {
 				if (ans.get(j) != hard[j]) {
+					check2 = 0;
+
 					escapeN(2);
 					System.out.println("\t\t\t버거 판매에 실패하였습니다.");
-					score -= 250;
+					score -= 700;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
-					timer.cancel();
-					jframe.setVisible(false);
+
 					check = 0;
 					escapeN(2);
 					break;
@@ -1071,36 +1075,39 @@ public class BurgerStore {
 			}
 			if (ans.size() == 7) {
 				if (cntlength == hard.length) {
+					check2 = 0;
+
 					escapeN(2);
 					System.out.println("\t\t\t버거 판매에 성공하였습니다.");
 					score += 1400;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
-					timer.cancel();
-					jframe.setVisible(false);
+
 					check = 0;
 					escapeN(2);
 				}
 			}
 			if (ans.size() == 8) {
 				if (cntlength == hard.length) {
+					check2 = 0;
+
 					escapeN(2);
 					System.out.println("\t\t\t버거 판매에 성공하였습니다.");
 					score += 1600;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
-					timer.cancel();
-					jframe.setVisible(false);
+
 					check = 0;
 					escapeN(2);
 				}
 			}
 			if (ans.size() == 9) {
 				if (cntlength == hard.length) {
+					check2 = 0;
+
 					escapeN(2);
 					System.out.println("\t\t\t버거 판매에 성공하였습니다.");
 					score += 1800;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
-					timer.cancel();
-					jframe.setVisible(false);
+
 					check = 0;
 					escapeN(2);
 				}
@@ -1121,42 +1128,13 @@ public class BurgerStore {
 		escapeN(2);
 	}
 
-	public static void countGui() {
-		
-		jframe.setLayout(new FlowLayout());
-		jframe.setBounds(170, 0, 170, 100);
-
-		jframe.add(jLabel);
-		jframe.setVisible(true);
-
-
-		timer.scheduleAtFixedRate(new TimerTask() {
-			int i = 3;
-
-			public void run() {
-				jLabel.setText(/* 객체스트링 */ " : " + i);
-				i--;
-
-				if (i < 0) {
-					timer.cancel();
-					jLabel.setText("이집 별로네...");
-					try {
-						Thread.sleep(1000);
-					} catch (InterruptedException e) {
-
-						e.printStackTrace();
-					}
-					jframe.setVisible(false);
-				}
-			}
-		}, 0, 1000);
-	}
-
 	public static void cusAppear(int lev) {
 
 		customerCTRL cus = new customerCTRL();
 		customerCharCTRL ccv = new customerCharCTRL();
-		if (check == 0 || check2 == 0) {
+		if (check == 0 || check3 == 0) {
+			check3 = 1;
+			mp3.custbgm();
 			cusName = cus.customer();
 			cusDia = cus.dialogue();
 			cusChar = ccv.customerchar();
@@ -1170,74 +1148,71 @@ public class BurgerStore {
 				hard = ac.Hard();
 				cusIng = Arrays.toString(hard);
 			}
-			if (easy.length == 3) {
-
-				cusTime(15);
-			} else if (easy.length == 4) {
-
-				cusTime(17);
-			} else if (easy.length == 5 || normal.length == 5) {
-
-				cusTime(19);
-			} else if (normal.length == 6) {
-
-				cusTime(22);
-			} else if (normal.length == 7 || hard.length == 7) {
-
-				cusTime(24);
-			} else if (hard.length == 8) {
-
-				cusTime(26);
-			} else if (hard.length == 9) {
-
-				cusTime(28);
-			}
+//			if (easy.length == 3) {
+//				cusTime(20);
+//			} else if (easy.length == 4) {
+//				cusTime(23);
+//			} else if (easy.length == 5 || normal.length == 5) {
+//				cusTime(26);
+//			} else if (normal.length == 6) {
+//				cusTime(29);
+//			} else if (normal.length == 7 || hard.length == 7) {
+//				cusTime(31);
+//			} else if (hard.length == 8) {
+//				cusTime(34);
+//			} else if (hard.length == 9) {
+//				cusTime(38);
+//			}
 
 		}
-		
+
 		System.out.println("\t\t\t" + cusChar);
 		System.out.println("\t\t\t" + cusName);
 		System.out.println("\t\t\t" + cusDia);
 		System.out.println("\t\t\t" + cusIng);
 		escapeN(1);
-		
 
 	}
 
 	public static void cusTime(int time) {
-		
+		JFrame jframe = new JFrame();
+		JLabel jLabel = new JLabel();
+		Timer timer = new Timer();
+
 		jframe.setLayout(new FlowLayout());
-		jframe.setBounds(1200, 100, 170, 100);
+		jframe.setBounds(1200, 100, 270, 100);
 
 		jframe.add(jLabel);
 		jframe.setVisible(true);
-		Font font = new Font("맑은 고딕", Font.PLAIN, 50);
+		Font font = new Font("맑은 고딕", Font.PLAIN, 30);
 		jLabel.setFont(font);
 
 		timer.scheduleAtFixedRate(new TimerTask() {
 			int i = time;
+
 			public void run() {
-				check2 = 1;
 				jLabel.setText(cusName + " : " + i);
 				i--;
 
-				if (i == 0) {
-					timer.cancel();
+				if (i == 0 || check2 == 0) {
+
 					jLabel.setText("\t\t\t" + cusName + "손님이 떠났습니다.");
 					try {
+
 						Thread.sleep(100);
+
+						System.out.println("\t\t\t" + cusName + "손님이 떠났습니다.");
+						check3 = 0;
+						cusAppear(level);
+
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
-					check2 = 0;
-					System.out.println("\t\t\t" + cusName + "손님이 떠났습니다.");
-					jframe.setVisible(false);
-					cusAppear(level);
-					
 
 				}
 			}
 		}, 0, 1000);
+
 	}
 
 	public static void startTimeGui(int count) {
@@ -1260,7 +1235,7 @@ public class BurgerStore {
 				i--;
 
 				if (i < 0) {
-					timer.cancel();
+
 					jLabel.setText("게임종료!!!");
 					endcheck = 0;
 				}
