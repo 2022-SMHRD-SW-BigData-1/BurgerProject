@@ -169,7 +169,7 @@ public class DAO {
 		ArrayList<RankingVO> list = new ArrayList<RankingVO>();
 		try {
 			getCon();
-			String sql = "select * from ranking where rownum < 11 order by score";
+			String sql = "select * from ranking where rownum < 50 order by score desc";
 
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();

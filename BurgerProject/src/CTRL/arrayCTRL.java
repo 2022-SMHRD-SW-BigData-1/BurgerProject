@@ -36,7 +36,9 @@ public class arrayCTRL {
 	}
 
 	public static String[] Hard() {
-		int num = rd.nextInt(3) + 5;
+
+		int num = rd.nextInt(3) + 7;
+
 		recipe = new String[num];
 		recipe[0] = "빵";
 		recipe[recipe.length - 1] = "빵";
