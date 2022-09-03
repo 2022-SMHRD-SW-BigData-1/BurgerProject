@@ -46,12 +46,17 @@ public class BurgerStore {
 	static int cntHard = 4;
 	static int score = 10000;
 	static int check = 0;
+	static int check2 = 0;
 	static int endcheck = 1;
 	static int level = 0;
 	static String[] easy;
 	static String[] normal;
 	static String[] hard;
 	static ArrayList<String> ans = new ArrayList<>();
+	
+	static JFrame jframe = new JFrame();
+	static JLabel jLabel = new JLabel();
+	static Timer timer = new Timer();
 
 	public static void main(String[] args) {
 		while (true) {
@@ -429,7 +434,7 @@ public class BurgerStore {
 	}
 
 	public static void BuyIngredient() {
-		
+
 		while (endcheck == 1) {
 
 			escapeN(2);
@@ -638,7 +643,7 @@ public class BurgerStore {
 	}
 
 	public static void MakeHamburger() {
-		
+
 		while (endcheck == 1) {
 
 			escapeN(2);
@@ -940,6 +945,8 @@ public class BurgerStore {
 					System.out.println("\t\t\t버거 판매에 실패하였습니다.");
 					score -= 250;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
+					timer.cancel();
+					jframe.setVisible(false);
 					check = 0;
 
 					break;
@@ -953,6 +960,8 @@ public class BurgerStore {
 					System.out.println("\t\t\t버거 판매에 성공하였습니다.");
 					score += 300;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
+					timer.cancel();
+					jframe.setVisible(false);
 					check = 0;
 
 				}
@@ -963,6 +972,8 @@ public class BurgerStore {
 					System.out.println("\t\t\t버거 판매에 성공하였습니다.");
 					score += 400;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
+					timer.cancel();
+					jframe.setVisible(false);
 					check = 0;
 
 				}
@@ -973,6 +984,8 @@ public class BurgerStore {
 					System.out.println("\t\t\t버거 판매에 성공하였습니다.");
 					score += 500;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
+					timer.cancel();
+					jframe.setVisible(false);
 					check = 0;
 
 				}
@@ -984,6 +997,8 @@ public class BurgerStore {
 					System.out.println("\t\t\t버거 판매에 실패하였습니다.");
 					score -= 250;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
+					timer.cancel();
+					jframe.setVisible(false);
 					check = 0;
 					escapeN(2);
 					break;
@@ -997,6 +1012,8 @@ public class BurgerStore {
 					System.out.println("\t\t\t버거 판매에 성공하였습니다.");
 					score += 750;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
+					timer.cancel();
+					jframe.setVisible(false);
 					check = 0;
 					escapeN(2);
 				}
@@ -1007,6 +1024,8 @@ public class BurgerStore {
 					System.out.println("\t\t\t버거 판매에 성공하였습니다.");
 					score += 900;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
+					timer.cancel();
+					jframe.setVisible(false);
 					check = 0;
 					escapeN(2);
 				}
@@ -1017,6 +1036,8 @@ public class BurgerStore {
 					System.out.println("\t\t\t버거 판매에 성공하였습니다.");
 					score += 1050;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
+					timer.cancel();
+					jframe.setVisible(false);
 					check = 0;
 					escapeN(2);
 				}
@@ -1028,6 +1049,8 @@ public class BurgerStore {
 					System.out.println("\t\t\t버거 판매에 실패하였습니다.");
 					score -= 250;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
+					timer.cancel();
+					jframe.setVisible(false);
 					check = 0;
 					escapeN(2);
 					break;
@@ -1041,6 +1064,8 @@ public class BurgerStore {
 					System.out.println("\t\t\t버거 판매에 성공하였습니다.");
 					score += 1400;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
+					timer.cancel();
+					jframe.setVisible(false);
 					check = 0;
 					escapeN(2);
 				}
@@ -1051,6 +1076,8 @@ public class BurgerStore {
 					System.out.println("\t\t\t버거 판매에 성공하였습니다.");
 					score += 1600;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
+					timer.cancel();
+					jframe.setVisible(false);
 					check = 0;
 					escapeN(2);
 				}
@@ -1061,6 +1088,8 @@ public class BurgerStore {
 					System.out.println("\t\t\t버거 판매에 성공하였습니다.");
 					score += 1800;
 					System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
+					timer.cancel();
+					jframe.setVisible(false);
 					check = 0;
 					escapeN(2);
 				}
@@ -1082,15 +1111,13 @@ public class BurgerStore {
 	}
 
 	public static void countGui() {
-		JFrame jframe = new JFrame();
-		JLabel jLabel = new JLabel();
+		
 		jframe.setLayout(new FlowLayout());
 		jframe.setBounds(170, 0, 170, 100);
 
 		jframe.add(jLabel);
 		jframe.setVisible(true);
 
-		Timer timer = new Timer();
 
 		timer.scheduleAtFixedRate(new TimerTask() {
 			int i = 3;
@@ -1115,10 +1142,10 @@ public class BurgerStore {
 	}
 
 	public static void cusAppear(int lev) {
-//		int cnt = 0;
+
 		customerCTRL cus = new customerCTRL();
 		customerCharCTRL ccv = new customerCharCTRL();
-		if (check == 0) {
+		if (check == 0 || check2 == 0) {
 			cusName = cus.customer();
 			cusDia = cus.dialogue();
 			cusChar = ccv.customerchar();
@@ -1132,67 +1159,70 @@ public class BurgerStore {
 				hard = ac.Hard();
 				cusIng = Arrays.toString(hard);
 			}
+			if (easy.length == 3) {
+
+				cusTime(15);
+			} else if (easy.length == 4) {
+
+				cusTime(17);
+			} else if (easy.length == 5 || normal.length == 5) {
+
+				cusTime(19);
+			} else if (normal.length == 6) {
+
+				cusTime(22);
+			} else if (normal.length == 7 || hard.length == 7) {
+
+				cusTime(24);
+			} else if (hard.length == 8) {
+
+				cusTime(26);
+			} else if (hard.length == 9) {
+
+				cusTime(28);
+			}
 
 		}
+		
 		System.out.println("\t\t\t" + cusChar);
 		System.out.println("\t\t\t" + cusName);
 		System.out.println("\t\t\t" + cusDia);
 		System.out.println("\t\t\t" + cusIng);
 		escapeN(1);
-//		if (ac.length == 3) {
-//			++cnt;
-//			cusTime(0, 0, 15);
-//		} else if (ac.length == 4) {
-//			++cnt;
-//			cusTime(0, 0, 17);
-//		} else if (ac.length == 5) {
-//			++cnt;
-//			cusTime(0, 0, 19);
-//		} else if (ac.length == 6) {
-//			++cnt;
-//			cusTime(0, 0, 22);
-//		} else if (ac.length == 7) {
-//			++cnt;
-//			cusTime(0, 0, 24);
-//		} else if (ac.length == 8) {
-//			++cnt;
-//			cusTime(0, 0, 26);
-//		} else if (ac.length == 9) {
-//			++cnt;
-//			cusTime(0, 0, 28);
-//		}
+		
 
 	}
 
-	public static void cusTime(int x, int y, int time) {
-		JFrame jframe = new JFrame();
-		JLabel jLabel = new JLabel();
+	public static void cusTime(int time) {
+		
 		jframe.setLayout(new FlowLayout());
-		jframe.setBounds(x, y, 170, 100);
+		jframe.setBounds(1200, 100, 170, 100);
 
 		jframe.add(jLabel);
 		jframe.setVisible(true);
-
-		Timer timer = new Timer();
+		Font font = new Font("맑은 고딕", Font.PLAIN, 50);
+		jLabel.setFont(font);
 
 		timer.scheduleAtFixedRate(new TimerTask() {
 			int i = time;
-
 			public void run() {
+				check2 = 1;
 				jLabel.setText(cusName + " : " + i);
 				i--;
 
-				if (i < 0) {
+				if (i == 0) {
 					timer.cancel();
 					jLabel.setText("\t\t\t" + cusName + "손님이 떠났습니다.");
 					try {
-						Thread.sleep(500);
+						Thread.sleep(100);
 					} catch (InterruptedException e) {
-
 						e.printStackTrace();
 					}
+					check2 = 0;
 					System.out.println("\t\t\t" + cusName + "손님이 떠났습니다.");
 					jframe.setVisible(false);
+					cusAppear(level);
+					
 
 				}
 			}
