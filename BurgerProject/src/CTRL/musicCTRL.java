@@ -11,11 +11,11 @@ public class musicCTRL {
 
 	public musicCTRL() {
 
-		musicList.add(new MusicVO("mainbgm", "src//music//mainbgm.mp3"));
-		musicList.add(new MusicVO("프롤로그", "src//music//pro.mp3"));
-		musicList.add(new MusicVO("게임진행", "src//music//start2.mp3"));
-		musicList.add(new MusicVO("손님", "src//music//customer.mp3"));
-		musicList.add(new MusicVO("엔딩", "src//music//ending.mp3"));
+		musicList.add(new MusicVO("mainbgm", "./src//music//mainbgm.mp3"));
+		musicList.add(new MusicVO("프롤로그", "./src//music//pro.mp3"));
+		musicList.add(new MusicVO("게임진행", "./src//music//start2.mp3"));
+		musicList.add(new MusicVO("손님", "./src//music//customer.mp3"));
+		musicList.add(new MusicVO("엔딩", "./src//music//ending.mp3"));
 	}
 
 	public void playstop(String s) {
