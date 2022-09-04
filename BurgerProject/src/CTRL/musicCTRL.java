@@ -50,8 +50,6 @@ public class musicCTRL {
 			MusicVO m = musicList.get(i);
 			String a = m.getBgmName();
 			if (a.equals(s)) {
-				if (mp3.isPlaying()) {
-				}
 				mp3.stop();
 			}
 		}

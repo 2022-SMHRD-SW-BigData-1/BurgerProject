@@ -17,5 +17,6 @@ select * from RANKING
 delete MEMBERINFO
 delete RANKING
 
+select * from MEMBERINFO
 
 select * from ranking where rownum < 101 order by score
