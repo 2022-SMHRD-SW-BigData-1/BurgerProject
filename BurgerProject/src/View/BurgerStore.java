@@ -73,10 +73,7 @@ public class BurgerStore {
 			selectLevel();
 			loading();
 			mp3.stop("프롤로그");
-			mp3.playstop("게임진행");
 			play();
-			mp3.stop("게임진행");
-			mp3.playstop("엔딩");
 			System.out.println("\t\t\t게임이 끝났습니다. 정산결과 당신의 점수는 " + score + "점 입니다.");
 			
 			ranking();
@@ -378,13 +375,14 @@ public class BurgerStore {
 	public static void play() {
 		musicCTRL mp3 = new musicCTRL();
 		long start = System.currentTimeMillis();
-		int minute = 60;
+		int minute = 20;
 		long time = minute * 1000;
 
 		escapeN(30);
 		startTimeGui(minute);
 		while ((System.currentTimeMillis() - start) < time) {
 			if (check == 0) {
+				mp3.custbgm();
 				cusAppear(level);
 				check = 1;
 			} else {
@@ -1235,7 +1233,6 @@ public class BurgerStore {
 				i--;
 
 				if (i < 0) {
-
 					jLabel.setText("게임종료!!!");
 					endcheck = 0;
 				}
