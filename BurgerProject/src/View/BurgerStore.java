@@ -4,6 +4,7 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -20,6 +21,7 @@ import CTRL.musicCTRL;
 public class BurgerStore {
 	static DAO dao = new DAO();
 	static Scanner sc = new Scanner(System.in);
+	static Random rd = new Random();
 	static int i = 1;
 	static arrayCTRL ac = new arrayCTRL();
 
@@ -52,6 +54,7 @@ public class BurgerStore {
 	static int bcheck = 0;
 	static int endcheck = 1;
 	static int level = 0;
+	static String cond = "";
 	static String[] easy;
 	static String[] normal;
 	static String[] hard;
@@ -59,8 +62,6 @@ public class BurgerStore {
 
 	static JFrame jframe = new JFrame();
 	static Timer timer = new Timer();
-
-	
 
 	public static void main(String[] args) {
 		musicCTRL mp3 = new musicCTRL();
@@ -72,6 +73,7 @@ public class BurgerStore {
 			mp3.playstop("프롤로그");
 			story();
 			System.out.print("\t\t\t점장님! Tutorial을 볼까요? Y/N  ");
+			escapeN(5);
 			String tuto = sc.next();
 			if (tuto.equals("Y") || tuto.equals("y")) {
 				tutorial();
@@ -85,7 +87,7 @@ public class BurgerStore {
 			mp4.playstop("게임진행");
 			play(mp3);
 			mp4.stop();
-			
+
 			mp3.playstop("엔딩");
 
 			System.out.println("\t\t\t게임이 끝났습니다. 정산결과 당신의 점수는 " + score + "점 입니다.");
@@ -273,32 +275,37 @@ public class BurgerStore {
 
 	public static void selectLevel() {
 
-		System.out.print("\t\t\t\t난이도를 선택하세요! >> ");
+		System.out.print("\t\t\t난이도를 선택하세요! >> ");
 		System.out.print("[1]Easy  [2]Normal  [3]Hard   ");
-		escapeN(3);
+		escapeN(2);
 		int num = sc.nextInt();
 		switch (num) {
 		case 1: {
 			level = 1;
-			System.out.println("\t\t\t\tEasy 난이도를 선택하셨습니다. 곧 게임을 시작하겠습니다.");
+			System.out.println("\t\t\tEasy 난이도를 선택하셨습니다. 곧 게임을 시작하겠습니다.");
 
 			break;
 		}
 		case 2: {
 			level = 2;
-			System.out.println("\t\t\t\tNormal 난이도를 선택하셨습니다. 곧 게임을 시작하겠습니다.");
+			System.out.println("\t\t\tNormal 난이도를 선택하셨습니다. 곧 게임을 시작하겠습니다.");
 
 			break;
 		}
 		case 3: {
 			level = 3;
-			System.out.println("\t\t\t\tHard 난이도를 선택하셨습니다. 곧 게임을 시작하겠습니다.");
+			System.out.println("\t\t\tHard 난이도를 선택하셨습니다. 곧 게임을 시작하겠습니다.");
 
 			break;
 		}
 		default:
 			break;
 		}
+		Font font = new Font("맑은 고딕", Font.PLAIN, 20);
+		cond = condition();
+		escapeN(3);
+		System.err.println("\t\t\t★오늘의 뉴스!★  :  " + cond);
+		System.out.println("\n\n\n\n");
 
 	}
 
@@ -471,6 +478,7 @@ public class BurgerStore {
 	public static void loading() {
 		try {
 			escapeN(3);
+			Thread.sleep(1000);
 			System.out.print("\t\t문여는 중");
 			Thread.sleep(500);
 			System.out.print("-----");
@@ -502,7 +510,6 @@ public class BurgerStore {
 	}
 
 	public static void BuyIngredient(musicCTRL mp3) {
-		
 
 		while (endcheck == 1) {
 
@@ -521,8 +528,8 @@ public class BurgerStore {
 
 				escapeN(2);
 				cusAppear(level, mp3);
-				System.out.println("\t\t\t[1]고기패티(40원)-" + Cntmeatpatty + "개 [2]새우패티(40원)-" + Cntshrimppatty
-						+ "개 [3]치킨패티(40원)-" + Cntchickenpatty + "개 [4]베이컨(40원)-" + Cntbacon + "개 [0]이전");
+				System.out.println("\t\t\t[1]고기패티-" + Cntmeatpatty + "개 [2]새우패티-" + Cntshrimppatty
+						+ "개 [3]치킨패티-" + Cntchickenpatty + "개 [4]베이컨-" + Cntbacon + "개 [0]이전");
 				System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 				System.out.print("\t\t\t<선택> : ");
 				int num2 = sc.nextInt();
@@ -535,7 +542,14 @@ public class BurgerStore {
 
 						System.out.println("\t\t\t고기패티를 구매하였습니다.");
 						System.out.println();
-						score -= 40;
+						if (cond.equals("이X박이 미쳤어요!! 광우병 발생!!(고기패티 인상)")) {
+							score -= 500;
+						} else if (cond.equals("러.우 전쟁 발발! 비료값 상승!(야채, 고기, 빵 균등 인상)")) {
+							score -= 150;
+						} else {
+							score -= 40;
+						}
+
 						Cntmeatpatty++;
 						System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 						escapeN(2);
@@ -557,7 +571,11 @@ public class BurgerStore {
 
 						System.out.println("\t\t\t치킨패티를 구매하였습니다.");
 						System.out.println();
-						score -= 40;
+						if (cond.equals("러.우 전쟁 발발! 비료값 상승!(야채, 고기, 빵 균등 인상)")) {
+							score -= 150;
+						} else {
+							score -= 40;
+						}
 						Cntchickenpatty++;
 						System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 						escapeN(2);
@@ -568,7 +586,12 @@ public class BurgerStore {
 
 						System.out.println("\t\t\t베이컨를 구매하였습니다.");
 						System.out.println();
-						score -= 40;
+						if (cond.equals("러.우 전쟁 발발! 비료값 상승!(야채, 고기, 빵 균등 인상)")) {
+							score -= 150;
+						} else {
+							score -= 40;
+						}
+
 						Cntbacon++;
 						System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 						escapeN(2);
@@ -590,7 +613,7 @@ public class BurgerStore {
 
 				escapeN(2);
 				cusAppear(level, mp3);
-				System.out.println("\t\t\t[1]토마토(30원)-" + Cnttomato + "개 [2]피클(30원)-" + Cntpickle + "개 [3]양상추(30원)-"
+				System.out.println("\t\t\t[1]토마토-" + Cnttomato + "개 [2]피클-" + Cntpickle + "개 [3]양상추-"
 						+ Cntcabbage + "개 [0]이전");
 				System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 				System.out.print("\t\t\t<선택> : ");
@@ -604,7 +627,13 @@ public class BurgerStore {
 
 						System.out.println("\t\t\t토마토를 구매하였습니다.");
 						System.out.println();
-						score -= 30;
+						if (cond.equals("러.우 전쟁 발발! 비료값 상승!(야채, 고기, 빵 균등 인상)")) {
+							score -= 150;
+						} else if (cond.equals("흰남노 북상중!(야채 인상)")) {
+							score -= 200;
+						} else {
+							score -= 30;
+						}
 						Cnttomato++;
 						System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 						escapeN(2);
@@ -615,7 +644,13 @@ public class BurgerStore {
 
 						System.out.println("\t\t\t피클을 구매하였습니다.");
 						System.out.println();
-						score -= 30;
+						if (cond.equals("러.우 전쟁 발발! 비료값 상승!(야채, 고기, 빵 균등 인상)")) {
+							score -= 150;
+						} else if (cond.equals("흰남노 북상중!(야채 인상)")) {
+							score -= 200;
+						} else {
+							score -= 30;
+						}
 						Cntpickle++;
 						System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 						escapeN(2);
@@ -626,7 +661,13 @@ public class BurgerStore {
 
 						System.out.println("\t\t\t양상추를 구매하였습니다.");
 						System.out.println();
-						score -= 30;
+						if (cond.equals("러.우 전쟁 발발! 비료값 상승!(야채, 고기, 빵 균등 인상)")) {
+							score -= 150;
+						} else if (cond.equals("흰남노 북상중!(야채 인상)")) {
+							score -= 200;
+						} else {
+							score -= 30;
+						}
 						Cntcabbage++;
 						System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 						escapeN(2);
@@ -647,8 +688,8 @@ public class BurgerStore {
 
 				escapeN(2);
 				cusAppear(level, mp3);
-				System.out.println("\t\t\t[1]빵(20원)-" + Cntbread + "개 [2]머스타드(20원)-" + Cntmustard + "개 [3]케찹(20원)-"
-						+ Cntketchup + "개 [4]치즈(20원)-" + Cntcheese + "개 [0]이전");
+				System.out.println("\t\t\t[1]빵-" + Cntbread + "개 [2]머스타드-" + Cntmustard + "개 [3]케찹-"
+						+ Cntketchup + "개 [4]치즈-" + Cntcheese + "개 [0]이전");
 				System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 				System.out.print("\t\t\t<선택> : ");
 
@@ -661,7 +702,11 @@ public class BurgerStore {
 						escapeN(2);
 						System.out.println("\t\t\t빵을 구매하였습니다.");
 						System.out.println();
-						score -= 20;
+						if (cond.equals("러.우 전쟁 발발! 비료값 상승!(야채, 고기, 빵 균등 인상)")) {
+							score -= 120;
+						} else {
+							score -= 30;
+						}
 						Cntbread++;
 						System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 						escapeN(2);
@@ -681,7 +726,13 @@ public class BurgerStore {
 						escapeN(2);
 						System.out.println("\t\t\t케찹을 구매하였습니다.");
 						System.out.println();
-						score -= 20;
+						if (cond.equals("러.우 전쟁 발발! 비료값 상승!(야채, 고기, 빵 균등 인상)")) {
+							score -= 120;
+						} else if (cond.equals("흰남노 북상중!(야채 인상)")) {
+							score -= 180;
+						} else {
+							score -= 20;
+						}
 						Cntketchup++;
 						System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 						escapeN(2);
@@ -691,7 +742,11 @@ public class BurgerStore {
 						escapeN(2);
 						System.out.println("\t\t\t치즈를 구매하였습니다.");
 						System.out.println();
-						score -= 20;
+						if (cond.equals("러.우 전쟁 발발! 비료값 상승!(야채, 고기, 빵 균등 인상)")) {
+							score -= 120;
+						} else {
+							score -= 20;
+						}
 						Cntcheese++;
 						System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 						escapeN(2);
@@ -716,9 +771,6 @@ public class BurgerStore {
 				escapeN(2);
 				break;
 			}
-			
-
-
 
 		}
 
@@ -1388,4 +1440,10 @@ public class BurgerStore {
 
 	}
 
+	public static String condition() {
+		String[] condition = { "흰남노 북상중!(야채 인상)", "이X박이 미쳤어요!! 광우병 발생!!(고기패티 인상)",
+				"러.우 전쟁 발발! 비료값 상승!(야채, 고기, 빵 균등 인상)", "평화로움~" };
+		String result = condition[rd.nextInt(4)];
+		return result;
+	}
 }
