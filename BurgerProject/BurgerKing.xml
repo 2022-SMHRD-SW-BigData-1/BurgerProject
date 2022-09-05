@@ -2,7 +2,7 @@
 <launch4jConfig>
   <dontWrapJar>false</dontWrapJar>
   <headerType>console</headerType>
-  <jar>C:\Users\EGEG22A03\Desktop\local repository\BurgerProject\BurgerProject\BurgerProject\BurgerKing.jar</jar>
+  <jar>C:\Users\EGEG22A03\Desktop\BurgerKing.jar</jar>
   <outfile>C:\Users\EGEG22A03\Desktop\local repository\BurgerProject\BurgerProject\BurgerProject\BurgerKing.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>

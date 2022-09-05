@@ -11,16 +11,16 @@ public class customerCTRL {
 	ArrayList<CustomerVO> cus = new ArrayList<CustomerVO>();
 
 	public customerCTRL() {
-		cus.add(new CustomerVO("[정세연]"));
-		cus.add(new CustomerVO("[이수환]"));
-		cus.add(new CustomerVO("[임승환]"));
-		cus.add(new CustomerVO("[김미희]"));
-		cus.add(new CustomerVO("[김용현]"));
-		cus.add(new CustomerVO("[채수민]"));
-		cus.add(new CustomerVO("[김동원]"));
-		cus.add(new CustomerVO("[이수현]"));
-		cus.add(new CustomerVO("[조자연]"));
-		cus.add(new CustomerVO("[임경남]"));
+		cus.add(new CustomerVO("[정세연쌤]"));
+		cus.add(new CustomerVO("[이수환쌤]"));
+		cus.add(new CustomerVO("[임승환쌤]"));
+		cus.add(new CustomerVO("[김미희쌤]"));
+		cus.add(new CustomerVO("[김용현쌤]"));
+		cus.add(new CustomerVO("[채수민쌤]"));
+		cus.add(new CustomerVO("[김동원쌤]"));
+		cus.add(new CustomerVO("[이수현쌤]"));
+		cus.add(new CustomerVO("[조자연쌤]"));
+		cus.add(new CustomerVO("[임경남쌤]"));
 
 		di.add(new DialogueVO("프로젝트 열심히 하는 친구들 사줘야지!"));
 		di.add(new DialogueVO("나는 오늘도 예민하다."));

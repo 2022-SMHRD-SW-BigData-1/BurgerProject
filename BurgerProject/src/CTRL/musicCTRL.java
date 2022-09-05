@@ -25,6 +25,7 @@ public class musicCTRL {
 			String a = m.getBgmName();
 			if (a.equals(s)) {
 				if (mp3.isPlaying()) {
+
 					mp3.stop();
 				}
 				mp3.play(m.getPath());
@@ -50,21 +51,30 @@ public class musicCTRL {
 		return m;
 
 	}
+	
+	public void isPlayingTest() {
 
-	public void stop(String s) {
+		System.out.println(mp3.isPlaying());
+	}
 
-		for (int i = 0; i < musicList.size(); i++) {
-			MusicVO m = musicList.get(i);
-			String a = m.getBgmName();
-			if (a.equals(s)) {
+	public void stop() {
+		
+		mp3.stop();
+		
 
-				mp3.stop();
-
-				if (mp3.isPlaying()) {
-					mp3.stop();
-				}
-
-			}
-		}
+//		for (int i = 0; i < musicList.size(); i++) {
+//			MusicVO m = musicList.get(i);
+//			String a = m.getBgmName();
+//			System.out.println(a);
+//			System.out.println(s);
+//			if (a.equals(s)) {
+//
+//				if (mp3.isPlaying()) {
+//					mp3.stop();
+//				} else
+//					mp3.stop();
+//
+//			}
+//		}
 	}
 }

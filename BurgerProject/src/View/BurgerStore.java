@@ -60,29 +60,40 @@ public class BurgerStore {
 	static JFrame jframe = new JFrame();
 	static Timer timer = new Timer();
 
-	static musicCTRL mp3 = new musicCTRL();
+	
 
 	public static void main(String[] args) {
-
+		musicCTRL mp3 = new musicCTRL();
 		while (true) {
 			endcheck = 1;
 			mp3.playstop("mainbgm");
 			startLogo();
 			User();
 			mp3.playstop("프롤로그");
-			start();
+			story();
+			System.out.print("\t\t\t점장님! Tutorial을 볼까요? Y/N  ");
+			String tuto = sc.next();
+			if (tuto.equals("Y") || tuto.equals("y")) {
+				tutorial();
+			}
+
 			selectLevel();
 			loading();
-			mp3.playstop("게임진행");
 			startTimeGui(120);
-			play();
+			mp3.stop();
+			musicCTRL mp4 = new musicCTRL();
+			mp4.playstop("게임진행");
+			play(mp3);
+			mp4.stop();
+			
 			mp3.playstop("엔딩");
+
 			System.out.println("\t\t\t게임이 끝났습니다. 정산결과 당신의 점수는 " + score + "점 입니다.");
 
 			ranking();
 			System.out.print("\t\t\t게임을 계속 하시겠습니까? Y/N");
 			String choice = sc.next();
-			mp3.stop("엔딩");
+			mp3.stop();
 			if (choice.equals("y") || choice.equals("Y")) {
 				continue;
 			} else {
@@ -183,7 +194,16 @@ public class BurgerStore {
 		}
 	}
 
-	public static void start() {
+	public static void story() {
+		System.out.println(
+
+				"\t\t\t ######  ########  #######  ########  ##    ## \n"
+						+ "\t\t\t##    ##    ##    ##     ## ##     ##  ##  ##  \n"
+						+ "\t\t\t##          ##    ##     ## ##     ##   ####   \n"
+						+ "\t\t\t ######     ##    ##     ## ########     ##    \n"
+						+ "\t\t\t      ##    ##    ##     ## ##   ##      ##    \n"
+						+ "\t\t\t##    ##    ##    ##     ## ##    ##     ##    \n"
+						+ "\t\t\t ######     ##     #######  ##     ##    ##    \n" + "\n\n\n");
 		System.out.println("\t\t\tAI가 세상을 지배한지 벌써 20년이나 지났다.. 인류 절반이 타노스 당했고 AI의 인간통제와\r\n"
 				+ "\t\t\t문명말살로 인해 인간의 컴퓨터는 도스창을 사용할 수 밖에 없는 세상이 왔다.\r\n"
 				+ "\t\t\t수 많은 인간의 음식들이 사라졌고 유일하게 남은 요식업 기업이 바로 BURGER KING...\r\n"
@@ -192,6 +212,62 @@ public class BurgerStore {
 				+ "\t\t\t(여기가 무슨 써브웨인줄 아나..)\r\n"
 				+ "\t\t\t그러다 갑자기 뼈저리게 가난한 우리의 주인공 \"너님\"은 우연히 비어있는 BURGER KING 점포를 발견하고\r\n"
 				+ "\t\t\t번뜩이는 아이디어를 떠올리며 들어가게 되는데.................\n\n");
+		System.out.println("\t\t\tEnter키를 눌러 진행하세요.");
+		String enter = sc.nextLine();
+		String enter2 = sc.nextLine();
+
+		escapeN(8);
+
+	}
+
+	public static void tutorial() {
+		try {
+			System.out.print("\t\t\t안녕하세요! 점장님! 당신은 이 버려진 2042년의 광주 동구에 있는 BURGER KING을 살리셨어요!!\n");
+			Thread.sleep(500);
+			System.out.print("\t\t\t저는 이전에 여기서 서빙로봇으로 일했던\n" + "\t\t\t  ^    ^    ^    ^       ^    ^    ^    ^  \n"
+					+ "\t\t\t /Y\\  /O\\  /N\\  /G\\     /H\\  /Y\\  /U\\  /N\\ \n"
+					+ "\t\t\t<___><___><___><___>   <___><___><___><___>" + "이에요!!\n");
+			Thread.sleep(500);
+			System.out.print("\t\t\t지금부터 점장님께서 BURGER KING을 운영하면서 지켜야할 규칙들을 설명드릴게요!!^^7\n\n");
+			Thread.sleep(500);
+			System.out.print("\t\t\t[1]재료구매 [2]주방 및 제작 [3]버거 판매 [4]재료 재고파악\n\n");
+			System.out.print("\t\t\t위에 보시는 것처럼 장사를 시작하면 숫자 버튼들이 보입니다! \n");
+			Thread.sleep(500);
+			System.out.print("\t\t\t숫자 버튼들을 입력하면 해당 업무를 처리하실 수 있어요! 차근차근 살펴볼까요??\n\n\n");
+			Thread.sleep(500);
+			System.out.print("\t\t\t[1]재료구매\n");
+			System.out.print("\t\t\t[1]육류 [2]채소류 [3]기타류 [0]처음화면으로 이동\n\n");
+			Thread.sleep(500);
+			System.out.print("\t\t\t\"[1]재료구매\"를 누르시면 \"육류\", \"채소류\", \"기타류\"를 구매할 수 있습니다!\n");
+			Thread.sleep(500);
+			System.out.print("\t\t\t각 재료들의 가격을 잘~ 보시고 재료를 구매하세요!\n\n\n");
+			Thread.sleep(500);
+			System.out.print("\t\t\t[2]주방 및 제작\n");
+			System.out.print("\t\t\t[1]육류 [2]채소류 [3]기타류 [4]버거 완성 [5]재료 버리기 [0]처음화면으로 이동\n");
+			Thread.sleep(500);
+			System.out.print("\t\t\t\"[2]주방 및 제작\" 에서는 구매한 재료를 이용하여 버거를 만들 수 있습니다.\n");
+			Thread.sleep(500);
+			System.out.print("\t\t\t\"[4]버거 완성\" 버튼을 눌러 직접만든 버거를 확인하세요!\n");
+			Thread.sleep(500);
+			System.out.print("\t\t\t이런! 버거를 잘못 만드셨다구요?? 그럼 \"[5]재료 버리기\" 버튼을 눌러 직접만든 버거를 버려보세요!\n");
+			System.out.print("\t\t\t설마! 선생님에게 다른 메뉴를 주시려는건 아니겟죠??^^\n\n\n");
+			Thread.sleep(500);
+			System.out.print("\t\t\t[1]재료구매 [2]주방 및 제작 [3]버거 판매 [4]재료 재고파악\n");
+			Thread.sleep(500);
+			System.out.print("\t\t\t버거를 다 만들었으면 \"[3]버거판매\"를 통해 선생님에게 맛있는 버거를 주세요!\n\n");
+			Thread.sleep(500);
+			System.out.print("\t\t\t어머! 점장님! 버거를 잘못 판매하셨다구요? 걱정마세요 ^^ 점장님 지갑에서 뺄께요!^^\n\n");
+			Thread.sleep(500);
+			System.out.print("\t\t\t\"[4]재고파악\" 버튼을 통해 남은 버거재료를 확인할 수 있습니다!\n\n\n");
+			Thread.sleep(500);
+			System.out.print("\t\t\t어맛! 말을 많이해서 배터리가 다 되었어요! 저는 이만 충전하러 가볼게요! 점장님 화이팅!!☆^^☆\n\n");
+
+			System.out.println("\t\t\tEnter키를 눌러 진행하세요.");
+			String enter = sc.nextLine();
+			String enter2 = sc.nextLine();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 	}
 
@@ -199,6 +275,7 @@ public class BurgerStore {
 
 		System.out.print("\t\t\t\t난이도를 선택하세요! >> ");
 		System.out.print("[1]Easy  [2]Normal  [3]Hard   ");
+		escapeN(3);
 		int num = sc.nextInt();
 		switch (num) {
 		case 1: {
@@ -227,114 +304,116 @@ public class BurgerStore {
 
 	public static void startLogo() {
 		try {
+			System.out.println();
+			Thread.sleep(3000);
 			System.out.print(
 					"\t                                                                                                    \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                                                                                                    \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                                          WWWWWWWWWWWWWWWW                                          \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                                  WWNXXKK00OOOkkkkkkkOOOO00KKXXNWW                                  \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                              WNXK0OkxxxxxxxxxxxxxxxxxxxxxxxxxxkO0KXNW                              \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                           WNKOkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxk0KNW                           \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                         WX0kxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxk0XW                         \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                       WXOxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxk0XW                       \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                      WKkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxkKW                      \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                     WKkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxkKW                     \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                     NOxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxON                     \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                     WX000000000000000000000000000000000000000000000000000000KW                     \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                     WXOOkO0XWWXO0XWX0OXNXOOOO0XWW WNX0OkO0XWN0OOOO0XN0OOOOKNW                      \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                     Ko;;::;cOKd;;xXx;;d0o;;;;;cxXNKdc;;;;;o0k:;;;;:xx:;;;;:oKW                     \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                     0l,:do;;d0o,;dKd;,lkl,;od:,cxko;;cddookKx;,:lokKx;,cdc,;xN                     \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                     0l,;c:;;x0o,;dKd;,lkl,;::;:xkoc,:xxc:coOd;,;;:dKx;,;c;;lKW                     \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                     0l,:xd:,cxo,,lkl;,okl,;c:,:xOkl,;ldl:,;dd;,:ldkKx;,:c;;oKW                     \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                     Kl,;::;;o0kc;;;;;ck0o;;xkc,:xXOo;;;:;;o0x;,;;;cxd;,oko;;oX                     \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                     W0xddxk0NWN0xdxxOKNXkxkXN0xx0XNX0kxxxkKNXOkkkxk00xdOXKkk0N                     \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                     WOoccd0WWXxlclkXW0occoONW0dccloONWW0occo0W WN0xolccclox0N                      \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                     Kl,,,;dX0l;,,,cOKo,,,,c0Xd;,,,,:xNNd;,,,oXW0o:,,,,,,,,,c0W                     \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                     0l,,,,coc,,,;:xXKl,,,,cOXo,,,,,,:xKo,,,,lK0l,,,;cdxxdllxX                      \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                     0l,,,,,,,,,:o0WWKl,,,,cOXo,,,,,,,:lc,,,,l0d;,,;o00kxddx0N                      \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                     0l,,,,,,,,,:xXW Kl,,,,cOXo,,,,,;;,,,,,,,lOo;,,;x0o,,,,,:xN                     \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                     0l,,,,:c;,,,;o0NKl,,,,cOXo,,,,,lxl;,,,,,l0x;,,,ckkdl;,,,lKW                    \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                     Kl,,,,oOo;,,,,:k0l,,,,cOXo,,,,,oK0l;,,,,oKKd;,,;:llc;,,;dN                     \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                     Xo;,,;xNXxc;,,;xKd;,,;lKNx;,,,;dNW0l;,,;dNWXkl:;,,,,,;cxX                      \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                     WXkxxOXW WKkxxOXWXOxdkKWWXOxxxkXW WXkxxkXW  WN0kxxdxkOXW                       \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                     WXKK0KKKKKKKKKKKKKK00KKKKKK0KKKKKKKKKKKKKKKKKKKKKK000KKKX                      \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                     NOxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxO                      \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                     WNOkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxkOX                      \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                       WX0OkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxkO0XN                       \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                         WWNXK0OOkkkxxxxxxxxxxxxxxxxxxxxxxxxxxxxkkkOO0KXNWWX                        \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                               WWWNNXXXXKKKKKKKKKKKKKKKKKKKKXXXXNNWWWWN                             \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                                                                                                    \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.print(
 					"\t                                                                                                    \n");
-			Thread.sleep(60);
+			Thread.sleep(50);
 			System.out.println(
 					"\t                                                                                                      ");
 			System.out.println("\t\t\t    ____  __  ______  ________________  __ __ _____   ________\r\n"
@@ -353,13 +432,13 @@ public class BurgerStore {
 		}
 	}
 
-	public static void play() {
+	public static void play(musicCTRL mp3) {
 
 		escapeN(30);
-
 		while (endcheck == 1) {
+
 			if (check == 0) {
-				cusAppear(level);
+				cusAppear(level, mp3);
 				check = 1;
 			} else {
 
@@ -370,9 +449,9 @@ public class BurgerStore {
 				int choice = sc.nextInt();
 
 				if (choice == 1) {
-					BuyIngredient();
+					BuyIngredient(mp3);
 				} else if (choice == 2) {
-					MakeHamburger();
+					MakeHamburger(mp3);
 				} else if (choice == 3) {
 					if (ans.size() == 0) {
 						System.out.println("\t\t\t버거가 준비되지 않았습니다!");
@@ -415,29 +494,35 @@ public class BurgerStore {
 			System.out.print("-----");
 			Thread.sleep(200);
 			System.out.println("장사 준비 완료!!");
+			escapeN(5);
 			Thread.sleep(1000);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	public static void BuyIngredient() {
+	public static void BuyIngredient(musicCTRL mp3) {
+		
 
 		while (endcheck == 1) {
 
+			if (score <= 0) {
+				endcheck = 0;
+
+				bcheck = 1;
+			}
 			escapeN(2);
-			cusAppear(level);
-			System.out.println("\t\t\t[1]육류 [2]채소류 [3]기타류 [4]처음화면으로 이동");
+			cusAppear(level, mp3);
+			System.out.println("\t\t\t[1]육류 [2]채소류 [3]기타류 [0]처음화면으로 이동");
 			System.out.print("\t\t\t<선택> : ");
 			int num1 = sc.nextInt();
-			escapeN(5);
 
-			if (num1 == 1 && bcheck == 0) {
+			if ((num1 == 1 && bcheck == 0)) {
 
 				escapeN(2);
-				cusAppear(level);
+				cusAppear(level, mp3);
 				System.out.println("\t\t\t[1]고기패티(40원)-" + Cntmeatpatty + "개 [2]새우패티(40원)-" + Cntshrimppatty
-						+ "개 [3]치킨패티(40원)-" + Cntchickenpatty + "개 [4]베이컨(40원)-" + Cntbacon + "개 [5]이전");
+						+ "개 [3]치킨패티(40원)-" + Cntchickenpatty + "개 [4]베이컨(40원)-" + Cntbacon + "개 [0]이전");
 				System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 				System.out.print("\t\t\t<선택> : ");
 				int num2 = sc.nextInt();
@@ -488,7 +573,7 @@ public class BurgerStore {
 						System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 						escapeN(2);
 						break;
-					case 5:
+					case 0:
 
 						escapeN(2);
 
@@ -501,12 +586,12 @@ public class BurgerStore {
 				}
 			}
 
-			if (num1 == 2 && bcheck == 0) {
+			if ((num1 == 2 && bcheck == 0)) {
 
 				escapeN(2);
-				cusAppear(level);
+				cusAppear(level, mp3);
 				System.out.println("\t\t\t[1]토마토(30원)-" + Cnttomato + "개 [2]피클(30원)-" + Cntpickle + "개 [3]양상추(30원)-"
-						+ Cntcabbage + "개 [4]이전");
+						+ Cntcabbage + "개 [0]이전");
 				System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 				System.out.print("\t\t\t<선택> : ");
 				int num3 = sc.nextInt();
@@ -546,7 +631,7 @@ public class BurgerStore {
 						System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 						escapeN(2);
 						break;
-					case 4:
+					case 0:
 
 						escapeN(2);
 
@@ -558,12 +643,12 @@ public class BurgerStore {
 				}
 			}
 
-			if (num1 == 3 && bcheck == 0) {
+			if ((num1 == 3 && bcheck == 0)) {
 
 				escapeN(2);
-				cusAppear(level);
+				cusAppear(level, mp3);
 				System.out.println("\t\t\t[1]빵(20원)-" + Cntbread + "개 [2]머스타드(20원)-" + Cntmustard + "개 [3]케찹(20원)-"
-						+ Cntketchup + "개 [4]치즈(20원)-" + Cntcheese + "개 [5]이전");
+						+ Cntketchup + "개 [4]치즈(20원)-" + Cntcheese + "개 [0]이전");
 				System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 				System.out.print("\t\t\t<선택> : ");
 
@@ -611,7 +696,7 @@ public class BurgerStore {
 						System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 						escapeN(2);
 						break;
-					case 5:
+					case 0:
 
 						escapeN(2);
 						System.out.println("\t\t\t이전으로 돌아가겠습니다.");
@@ -623,7 +708,7 @@ public class BurgerStore {
 				}
 			}
 
-			if (num1 == 4 && bcheck == 0) {
+			if ((num1 == 0 && bcheck == 0)) {
 
 				escapeN(2);
 				System.out.println("\t\t\t처음화면으로 이동합니다.");
@@ -631,29 +716,36 @@ public class BurgerStore {
 				escapeN(2);
 				break;
 			}
+			
+
+
 
 		}
 
 	}
 
-	public static void MakeHamburger() {
+	public static void MakeHamburger(musicCTRL mp3) {
 
 		while (endcheck == 1) {
 
+			if (score <= 0) {
+				endcheck = 0;
+				bcheck = 1;
+			}
 			escapeN(2);
-			cusAppear(level);
+			cusAppear(level, mp3);
 			System.out.println("\t\t\t버거에 들어갈 재료를 골라주세요.");
-			System.out.println("\t\t\t[1]육류 [2]채소류 [3]기타류 [4]버거 완성 [5]재료 버리기 [6]처음화면으로 이동");
+			System.out.println("\t\t\t[1]육류 [2]채소류 [3]기타류 [4]버거 완성 [5]재료 버리기 [0]처음화면으로 이동");
 			System.out.print("\t\t\t<선택> : ");
 
 			int num1 = sc.nextInt();
 			escapeN(5);
-			if (num1 == 1 && bcheck == 0) {
+			if ((num1 == 1 && bcheck == 0)) {
 
 				escapeN(2);
-				cusAppear(level);
+				cusAppear(level, mp3);
 				System.out.println("\t\t\t[1]고기패티(" + Cntmeatpatty + ") [2]새우패티(" + Cntshrimppatty + ") [3]치킨패티("
-						+ Cntchickenpatty + ") [4]베이컨(" + Cntbacon + ") [5]이전");
+						+ Cntchickenpatty + ") [4]베이컨(" + Cntbacon + ") [0]이전");
 				System.out.print("\t\t\t<선택> : ");
 
 				int num2 = sc.nextInt();
@@ -726,7 +818,7 @@ public class BurgerStore {
 							Cntbacon--;
 						}
 						break;
-					case 5:
+					case 0:
 
 						escapeN(2);
 						System.out.println("\t\t\t이전으로 돌아가겠습니다.");
@@ -738,12 +830,12 @@ public class BurgerStore {
 				}
 			}
 
-			if (num1 == 2 && bcheck == 0) {
+			if ((num1 == 2 && bcheck == 0)) {
 
 				escapeN(2);
-				cusAppear(level);
+				cusAppear(level, mp3);
 				System.out.println(
-						"\t\t\t[1]토마토(" + Cnttomato + ") [2]피클(" + Cntpickle + ") [3]양상추(" + Cntcabbage + ") [4]이전");
+						"\t\t\t[1]토마토(" + Cnttomato + ") [2]피클(" + Cntpickle + ") [3]양상추(" + Cntcabbage + ") [0]이전");
 				System.out.print("\t\t\t<선택> : ");
 
 				int num3 = sc.nextInt();
@@ -799,7 +891,7 @@ public class BurgerStore {
 							Cntcabbage--;
 						}
 						break;
-					case 4:
+					case 0:
 
 						escapeN(2);
 						System.out.println("\t\t\t이전으로 돌아가겠습니다.");
@@ -810,12 +902,12 @@ public class BurgerStore {
 				}
 			}
 
-			if (num1 == 3 && bcheck == 0) {
+			if ((num1 == 3 && bcheck == 0)) {
 
 				escapeN(2);
-				cusAppear(level);
+				cusAppear(level, mp3);
 				System.out.println("\t\t\t[1]빵(" + Cntbread + ") [2]머스타드(" + Cntmustard + ") [3]케찹(" + Cntketchup
-						+ ") [4]치즈(" + Cntcheese + ") [5]이전");
+						+ ") [4]치즈(" + Cntcheese + ") [0]이전");
 				System.out.print("\t\t\t<선택> : ");
 
 				int num4 = sc.nextInt();
@@ -889,7 +981,7 @@ public class BurgerStore {
 							Cntcheese--;
 						}
 						break;
-					case 5:
+					case 0:
 						escapeN(2);
 						System.out.println("\t\t\t이전으로 돌아가겠습니다.");
 						System.out.println();
@@ -899,7 +991,7 @@ public class BurgerStore {
 
 				}
 			}
-			if (num1 == 4 && bcheck == 0) {
+			if ((num1 == 4 && bcheck == 0)) {
 				escapeN(2);
 				System.out.println("\t\t\t버거를 완성하였습니다.");
 				System.out.print("\t\t\t[");
@@ -911,7 +1003,7 @@ public class BurgerStore {
 
 				break;
 			}
-			if (num1 == 5 && bcheck == 0) {
+			if ((num1 == 5 && bcheck == 0)) {
 
 				escapeN(2);
 				if (ans.size() == 0) {
@@ -923,7 +1015,7 @@ public class BurgerStore {
 
 				escapeN(2);
 			}
-			if (num1 == 6 && bcheck == 0) {
+			if ((num1 == 0 && bcheck == 0)) {
 
 				escapeN(2);
 				System.out.println("\t\t\t처음화면으로 이동합니다.");
@@ -939,6 +1031,10 @@ public class BurgerStore {
 
 		int cntlength = 0;
 
+		if (score <= 0) {
+			endcheck = 0;
+			bcheck = 1;
+		}
 		if (level == 1) {
 			if (ans.size() == easy.length) {
 				for (int j = 0; j < easy.length; j++) {
@@ -1142,7 +1238,7 @@ public class BurgerStore {
 		escapeN(2);
 	}
 
-	public static void cusAppear(int lev) {
+	public static void cusAppear(int lev, musicCTRL mp3) {
 
 		customerCTRL cus = new customerCTRL();
 		customerCharCTRL ccv = new customerCharCTRL();
@@ -1217,7 +1313,7 @@ public class BurgerStore {
 
 						System.out.println("\t\t\t" + cusName + "손님이 떠났습니다.");
 						check3 = 0;
-						cusAppear(level);
+//						cusAppear(level);
 
 					} catch (InterruptedException e) {
 						e.printStackTrace();
@@ -1254,6 +1350,7 @@ public class BurgerStore {
 					try {
 						Thread.sleep(1500);
 						endcheck = 0;
+
 						Thread.sleep(1000);
 						jframe.setVisible(false);
 					} catch (InterruptedException e) {
@@ -1290,4 +1387,5 @@ public class BurgerStore {
 		System.out.println();
 
 	}
+
 }
