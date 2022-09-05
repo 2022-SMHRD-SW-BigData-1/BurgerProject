@@ -305,6 +305,9 @@ public class BurgerStore {
 		cond = condition();
 		escapeN(3);
 		System.err.println("\t\t\t★오늘의 뉴스!★  :  " + cond);
+		System.err.println("\t\t\t★오늘의 뉴스!★  :  " + cond);
+		System.err.println("\t\t\t★오늘의 뉴스!★  :  " + cond);
+		System.err.println("\t\t\t★오늘의 뉴스!★  :  " + cond);
 		System.out.println("\n\n\n\n");
 
 	}
@@ -528,8 +531,8 @@ public class BurgerStore {
 
 				escapeN(2);
 				cusAppear(level, mp3);
-				System.out.println("\t\t\t[1]고기패티-" + Cntmeatpatty + "개 [2]새우패티-" + Cntshrimppatty
-						+ "개 [3]치킨패티-" + Cntchickenpatty + "개 [4]베이컨-" + Cntbacon + "개 [0]이전");
+				System.out.println("\t\t\t[1]고기패티-" + Cntmeatpatty + "개 [2]새우패티-" + Cntshrimppatty + "개 [3]치킨패티-"
+						+ Cntchickenpatty + "개 [4]베이컨-" + Cntbacon + "개 [0]이전");
 				System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 				System.out.print("\t\t\t<선택> : ");
 				int num2 = sc.nextInt();
@@ -613,8 +616,8 @@ public class BurgerStore {
 
 				escapeN(2);
 				cusAppear(level, mp3);
-				System.out.println("\t\t\t[1]토마토-" + Cnttomato + "개 [2]피클-" + Cntpickle + "개 [3]양상추-"
-						+ Cntcabbage + "개 [0]이전");
+				System.out.println(
+						"\t\t\t[1]토마토-" + Cnttomato + "개 [2]피클-" + Cntpickle + "개 [3]양상추-" + Cntcabbage + "개 [0]이전");
 				System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 				System.out.print("\t\t\t<선택> : ");
 				int num3 = sc.nextInt();
@@ -688,8 +691,8 @@ public class BurgerStore {
 
 				escapeN(2);
 				cusAppear(level, mp3);
-				System.out.println("\t\t\t[1]빵-" + Cntbread + "개 [2]머스타드-" + Cntmustard + "개 [3]케찹-"
-						+ Cntketchup + "개 [4]치즈-" + Cntcheese + "개 [0]이전");
+				System.out.println("\t\t\t[1]빵-" + Cntbread + "개 [2]머스타드-" + Cntmustard + "개 [3]케찹-" + Cntketchup
+						+ "개 [4]치즈-" + Cntcheese + "개 [0]이전");
 				System.out.println("\t\t\t현재 자산은 " + score + "원 입니다.");
 				System.out.print("\t\t\t<선택> : ");
 
